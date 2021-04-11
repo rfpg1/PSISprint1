@@ -1,9 +1,6 @@
-// File: ./models/somemodel.js
 
-//Require Mongoose
 var mongoose = require('mongoose');
 
-//Define a schema
 var Schema = mongoose.Schema;
 
 var Photo = new Schema({
@@ -13,5 +10,4 @@ var Photo = new Schema({
     date: {type: Date},
 });
 
-//Export function to create "SomeModel" model class
-module.exports = mongoose.model('PhotoModel', Photo);
+module.exports = mongoose.model('Photo', Photo);

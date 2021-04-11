@@ -11,13 +11,10 @@ var app = express();
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-//var mongoDB = 'mongodb://psi004:psi004@localhost:27017/psi004?retryWrites=true&authSource=psi004';
-var mongoDB = 'mongodb+srv://sim:sim@cluster0.73n0q.mongodb.net/local_library?retryWrites=true&w=majority';
+var mongoDB = 'mongodb://psi004:psi004@localhost:27017/psi004?retryWrites=true&authSource=psi004';
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
-
 
 app.use(logger('dev'));
 app.use(express.json());

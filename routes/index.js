@@ -3,6 +3,8 @@ var router = express.Router();
 var User = require('../models/user');
 var Photo = require('../models/photo');
 
+var async = require('async');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.json('teste');
@@ -11,6 +13,7 @@ router.get('/', function(req, res, next) {
 var users = [];
 
 router.get('/init', (req, res, next) => {
+  
   async.series(
     deleteDB(),
     userCreate('Richie', "123"),

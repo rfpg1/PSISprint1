@@ -7,7 +7,7 @@ var Photo = new Schema({
     user: {type: String},
     photo: {type: String},
     likes: {type: Number} ,
-    date: {type: Date},
+    date: {type: String},
 });
 
 module.exports = mongoose.model('Photo', Photo);

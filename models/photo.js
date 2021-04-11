@@ -4,10 +4,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Photo = new Schema({
-    user: {type: String},
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
     photo: {type: String},
     likes: {type: Number} ,
-    date: {type: String},
+    date: {type: Date},
 });
 
 module.exports = mongoose.model('Photo', Photo);

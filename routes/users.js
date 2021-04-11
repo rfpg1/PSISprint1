@@ -5,9 +5,10 @@ var userController = require('../controllers/userController');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+  res.json("teste");
   //TODO get all users;
 });
 
-router.get('/regist', userController.post_user);
+router.post('/regist', userController.post_user);
 
 module.exports = router;

@@ -7,8 +7,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var User = new Schema({
-  name: String,
-  pw: Date,
+  name: {type: String, unique: true},
+  pw: {type: String},
 });
 
 //Export function to create "SomeModel" model class

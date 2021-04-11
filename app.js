@@ -11,7 +11,7 @@ var app = express();
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongo --username psi004 --password psi004 --authenticationDatabase psi004 appserver.alunos.di.fc.ul.pt/psi004'; //insert_your_database_url_here
+var mongoDB = 'mongodb://psi004:psi004@localhost:27017/psi004?retryWrites=true&authSource=psi004';
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

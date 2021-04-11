@@ -38,7 +38,7 @@ function userCreate(name, pw) {
   users.push(user);
   user.save(function (err) {
     if (err) {
-      console.log('Algo de errado nao esta certo')
+      console.log('User could not be created during dbinit')
       return;
     }
     console.log('New user: ' + name);
@@ -50,7 +50,7 @@ function photoCreate(user, photo, likes, date) {
   var photo = new Photo(photoDetail);
   photo.save(function (err) {
     if (err) {
-      console.log('Algo de errado nao esta certo')
+      console.log('Photo could not be created during dbinit')
       return
     }
     console.log('New photo added');

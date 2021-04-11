@@ -15,10 +15,10 @@ router.get('/init', (req, res, next) => {
     deleteDB(),
     userCreate('Richie', "123"),
     userCreate('Daniel', "123"),
-    photoCreate(user[0], 'Praia', 1, DATE.now()),
-    photoCreate(user[0], 'fpg', 69, DATE.now()),
-    photoCreate(user[0], 'fpg2', 67, DATE.now()),
-    photoCreate(user[1], 'gordo', 3, DATE.now())
+    photoCreate('Richie', 'Praia', 1, DATE.now()),
+    photoCreate('Richie', 'fpg', 69, DATE.now()),
+    photoCreate('Richie', 'fpg2', 67, DATE.now()),
+    photoCreate('Daniel', 'gordo', 3, DATE.now())
   )
   res.json('DB created');
 })

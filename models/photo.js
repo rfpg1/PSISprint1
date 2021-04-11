@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Photo = new Schema({
-    user: {type: Schema.Types.Object},
+    user: {type: String},
     photo: {type: String},
     likes: {type: Number} ,
     date: {type: Date},

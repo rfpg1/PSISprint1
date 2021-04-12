@@ -7,7 +7,9 @@ exports.post_user = function (req, res, next) {
     User.find({ name: req.body.name, pw: req.body.pw })
         .exec(function (err, user) {
             if (err) { return next(err) }
-            u = user;
+            if(user){
+                u = user;
+            }
         })
     if(u === null){
         var new_user = new User(req.body);

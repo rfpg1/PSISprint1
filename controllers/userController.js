@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 
 exports.post_user = function (req, res, next) {
     console.log(req.body)
-    User.find({ name: req.body.name, pw: req.body.pw })
+    User.find({ name: req.body.name})
         .exec(function (err, user) {
             if (err) { return next(err) }
             console.log(user)
@@ -17,7 +17,5 @@ exports.post_user = function (req, res, next) {
             } else {
                 res.json({message:"User already exists"});
             }
-            
-           //res.json(!user)
         })
 }

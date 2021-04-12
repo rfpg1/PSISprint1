@@ -9,6 +9,10 @@ router.get('/', function(req, res, next) {
   //TODO get all users;
 });
 
+//Regist
 router.post('/regist', userController.post_user);
+
+//Login
+router.get('/login', userController.get_user);
 
 module.exports = router;

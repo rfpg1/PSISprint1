@@ -3,11 +3,9 @@ var User = require('../models/user');
 var mongoose = require('mongoose');
 
 exports.post_user = function (req, res, next) {
-    console.log(req.body)
     User.find({ name: req.body.name})
         .exec(function (err, user) {
             if (err) { return next(err) }
-            console.log(user)
             if(user.length === 0){
                 var new_user = new User(req.body);
                 new_user.save(function (err, user) {

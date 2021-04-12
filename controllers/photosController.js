@@ -7,5 +7,4 @@ exports.post_photo = function (req, res, next) {
         res.json( photo );
     })
     console.log(Cr7);
-    res.json(req.body);
 };

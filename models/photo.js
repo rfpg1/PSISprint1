@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 var Photo = new Schema({
     user: {type: String},
     photo: {type: String},
+    descricao: {type: String},
     likes: {type: Number},
     date: {type: Date},
 });

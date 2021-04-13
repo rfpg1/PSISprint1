@@ -19,9 +19,9 @@ router.get('/init', (req, res, next) => {
     userCreate('Richie', "123"),
     userCreate('Daniel', "123"),
     photoCreate(users[0], 'Praia', 1, Date.now()),
-    photoCreate(users[0], 'fpg', 69, Date.now()),
-    photoCreate(users[0], 'fpg2', 67, Date.now()),
-    photoCreate(users[1], 'gordo', 3, Date.now())
+    photoCreate(users[0], 'fpg', 69, new Date("1995-12-17T03:24:00")),
+    photoCreate(users[0], 'fpg2', 67, new Date("2000-12-17T03:24:00")),
+    photoCreate(users[1], 'gordo', 3, new Date("2020-12-17T03:24:00"))
   )
   res.json('DB created');
 })

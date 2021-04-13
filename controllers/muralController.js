@@ -4,12 +4,10 @@ var mongoose = require('mongoose');
 
 exports.get_recent = function (req, res, next) {
     Photo.find()
-        .sort(function(a,b){
-            console.log(a)
-            console.log(b)
-        })
         .exec(function (err, list_photo){
             if (err) { return next(err); }
+            console.log("Banana");
+            list_photo.sort([['date', (a,b) => b.date - a.date]])
             res.json(list_photo);
         });
 }

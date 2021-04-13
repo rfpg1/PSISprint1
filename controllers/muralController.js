@@ -8,6 +8,6 @@ exports.get_recent = function (req, res, next) {
         .slice(0, 50)
         .exec(function (err, list_photo){
             if (err) { return next(err); }
-            res.send(list_photo);
+            res.json(list_photo);
         });
 }

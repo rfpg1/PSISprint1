@@ -12,11 +12,11 @@ exports.get_recent = function (req, res, next) {
 }
 
 exports.get_favorites = function (req, res, next) {
+    console.log("Banana");
     Photo.find()
+        .sort([['likes', 'descending']])
         .exec(function (err, list_photo){
             if (err) { return next(err); }
-            console.log("Banana");
-            list_photo.sort( function(a, b) {return a.likes > b.likes})
             res.json(list_photo);
         });
 }

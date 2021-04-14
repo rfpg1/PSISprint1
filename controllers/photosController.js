@@ -10,7 +10,7 @@ exports.post_photo = function (req, res, next) {
 
 exports.delete_photo = function (req, res, next) {
     var id = req.params.id;
-    Hero.findByIdAndDelete(id, function (err, photo) {
+    Photo.findByIdAndDelete(id, function (err, photo) {
         if (err) { return next(err) }
         res.json({ message: 'Photo deleted successfully ' })
     })

@@ -46,7 +46,7 @@ function userCreate(name, pw) {
 }
 
 function photoCreate(user, photo, likes, date) {
-  photoDetail = { user: user, photo: photo, likes: likes, date: date }
+  photoDetail = { user: user, photo: photo, descricao: descricao, likes: likes, date: date }
   var photo = new Photo(photoDetail);
   photo.save(function (err) {
     if (err) {

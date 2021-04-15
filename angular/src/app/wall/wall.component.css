@@ -1,0 +1,41 @@
+.wall {
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    background: linear-gradient(0deg, #333, black);
+}
+
+.wall ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+.wall li {
+    float: left;
+    height: 11.7em;
+    width: 20.8em;
+    margin: .5em;
+    
+}
+
+.wall li img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2%;
+    border-top: .5px solid gray;
+}
+
+.wall li img:hover {
+    cursor: pointer;
+}
+
+::ng-deep .bdrop {
+    backdrop-filter: blur(4px);
+}
+
+::ng-deep .bdrop:hover {
+    cursor: pointer;
+}

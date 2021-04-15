@@ -13,10 +13,12 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  adduser(registo: any) {
-    var arr = []
-    this.http.post<any>("http://appserver.alunos.di.fc.ul.pt:3054/user/regist", registo, this.httpOptions).subscribe(a => { arr.push(a) })
-    return arr
+  adduser(registo: any): Observable<any> {
+    return this.http.post<any>("http://appserver.alunos.di.fc.ul.pt:3054/user/regist", registo, this.httpOptions).pipe(tap(a => { }))
+  }
+
+  loginuser(username, password): Observable<any> {
+    return this.http.get<any>(`http://appserver.alunos.di.fc.ul.pt:3054/user/login/?name=${username}&pw=${password}`).pipe(tap(a => { }))
   }
 
   /**

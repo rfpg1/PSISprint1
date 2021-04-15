@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from '../custom-validators';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable, of } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http'
 import { UserService } from '../user.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registar',
@@ -13,9 +13,13 @@ import { UserService } from '../user.service'
 export class RegistarComponent implements OnInit {
   public frmSignup: FormGroup;
 
+  public jaExiste = false;
+
+  public registou = false;
+
   httpOptions = { headers: new HttpHeaders({ "Content-Type": "application/json" }) }
 
-  constructor(private fb: FormBuilder, private userService: UserService,) {
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
     this.frmSignup = this.createSignupForm();
   }
 
@@ -56,7 +60,16 @@ export class RegistarComponent implements OnInit {
 
   submit() {
     var registo = { "name": this.frmSignup.value.username, "pw": this.frmSignup.value.password };
-    var variavel = this.userService.adduser(registo);
+    this.userService.adduser(registo).subscribe(a => {
+      if (a.message !== undefined) {
+        this.jaExiste = true;
+      }
+      else {
+        this.jaExiste = false;
+        this.registou = true;
+        this.router.navigate(["/login"]);
+      }
+    });
   }
 
   ngOnInit(): void {

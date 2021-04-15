@@ -55,7 +55,7 @@ export class RegistarComponent implements OnInit {
 
   submit() {
     var registo = { "name": this.frmSignup.value.username, "pw": this.frmSignup.value.password };
-    console.log("teste2")
+    console.log(registo)
     this.http.post<any>("http://appserver.alunos.di.fc.ul.pt:3054/user/regist", registo)
     console.log("teste3")
   }

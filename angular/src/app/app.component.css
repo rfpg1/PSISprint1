@@ -9,8 +9,8 @@ nav {
 
 .logo {
     background-image: url("src\assets\images\logo.png");
-    background-size: 150px;
-    padding-bottom: 6%;
+    background-size: 130px;
+    padding-bottom: 5%;
     margin-left: 2%;
     background-repeat: no-repeat;
 }

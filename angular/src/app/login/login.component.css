@@ -5,12 +5,7 @@
 }
 
 .bg {
-  /* The image used */
   background-image: url("src\assets\images\fundo.jpg");
-
-  /* Full height */
-
-  /* Center and scale the image nicely */
   padding-top: 2%;
   background-size: 100%;
   padding-bottom: 20%;
@@ -35,73 +30,80 @@ h1 {
   border: 3px solid #222222;
   border-radius: 5%;
   background-color: rgb(0, 0, 0);
-  padding: 16px;
+  padding: 1%;
   width: 25%;
   margin-left: 50%;
   margin-top: 1%;
 }
 
-
-/* Full-width inputs */
-input[type=text], input[type=password] {
+input {
   color: #ccc;
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  padding: 2% 2%;
+  margin: 1% 0;
   display: inline-block;
   border: 1px solid #222222;
   background-color: black;
   box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
 button[type=submit] {
+  font-size: 15px;
   background-color: #eb5b0d;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 1% 1%;
+  margin: 1% 0;
   border: none;
   cursor: pointer;
   width: 100%;
 }
 
 button {
-  border-radius: 3px;
+  font-size: 15px;
+  border-radius: 3%;
   background-color: #eb5b0d;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 1% 1%;
+  margin: 1% 0;
   border: none;
   cursor: pointer;
   width: 100%;
 }
 
-/* Add a hover effect for buttons */
 button:hover {
   opacity: 0.8;
 }
 
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
+@media only screen and (max-width: 600px) {
+  .bg {
+    background-color: black;
+    background-image: url("src\assets\images\fundotlm.jpg");
+    padding-bottom: 100%;
+  }
 
-/* Center the avatar image inside this container */
-.imgcontainer {
+  .container {
+  position: relative;
+  color: #ccc;
+  border: 3px solid #222222;
+  border-radius: 5%;
+  background-color: #000000;
+  padding: 2%;
+  width: 75%;
+  font-size: 12px;
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  }
+
+  h2 {
+  font-size: 30px;
   text-align: center;
-  margin: 24px 0 12px 0;
+  padding: 0;
+  margin: 0;
+  }
+
+  h1 {
+  font-size: 10px;
 }
 
-/* Avatar image */
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
 }

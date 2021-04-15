@@ -14,8 +14,7 @@ exports.post_user = function (req, res, next) {
                     res.json(user);
                 })
             } else {
-                res.sendStatus(500);
-                //res.json({message:"User already exists"});
+                res.json({message:"User already exists"});
             }
         })
 }

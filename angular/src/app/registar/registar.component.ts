@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from '../custom-validators';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Observable, of } from 'rxjs';
+import { UserService } from '../user.service'
 
 @Component({
   selector: 'app-registar',
@@ -13,9 +15,8 @@ export class RegistarComponent implements OnInit {
 
   httpOptions = { headers: new HttpHeaders({ "Content-Type": "application/json" }) }
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private userService: UserService,) {
     this.frmSignup = this.createSignupForm();
-
   }
 
   createSignupForm(): FormGroup {
@@ -56,10 +57,12 @@ export class RegistarComponent implements OnInit {
   submit() {
     var registo = { "name": this.frmSignup.value.username, "pw": this.frmSignup.value.password };
     console.log(registo)
-    this.http.post<any>("http://appserver.alunos.di.fc.ul.pt:3054/user/regist", registo)
-    console.log("teste3")
+    return this.userService.adduser(registo).subscribe(_ => console.log("ERRO"))
+
   }
 
   ngOnInit(): void {
   }
+
+
 }

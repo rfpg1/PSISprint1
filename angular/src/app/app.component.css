@@ -4,15 +4,12 @@
 }
 
 nav {
-    background-color: black;
+  background-color: #1b1b1b;
 }
 
-.logo {
-    background-image: url("src\assets\images\logo.png");
-    background-size: 130px;
-    padding-bottom: 5%;
-    margin-left: 2%;
-    background-repeat: no-repeat;
+img {
+  height: 80px;
+  margin-left: 20px;
 }
 
 h1 {

@@ -17,11 +17,7 @@ router.get('/init', (req, res, next) => {
   async.series(
     deleteDB(),
     userCreate('Richie', '123'),
-    userCreate('Daniel', '123'),
-    photoCreate('Richie', 'Praia', 'Ida à praia', 1, new Date("2000-12-17T03:24:00")),
-    photoCreate('Richie', 'fpg', 'fpg #1', 69, new Date("1995-12-17T03:24:00")),
-    photoCreate('Richie', 'fpg2', 'fpg #2', 67,  new Date("2005-12-17T03:24:00")),
-    photoCreate('Daniel', 'gordo', 'Gatão', 3, new Date("2010-12-17T03:24:00"))
+    userCreate('Daniel', '123')
   )
   res.json('DB created');
 })

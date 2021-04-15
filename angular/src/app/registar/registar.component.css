@@ -38,9 +38,9 @@ h1 {
   margin-left: 4%;
   position: relative;
   color: #ccc;
-  border: 3px solid #222222;
+  border: 2px solid #333;
   border-radius: 5%;
-  background-color: #000000;
+  background-color: #1b1b1b;
   padding: 1%;
   width: 30%;
 }
@@ -52,8 +52,8 @@ input {
   padding: 2% 2%;
   margin: 1% 0;
   display: inline-block;
-  border: 1px solid #222222;
-  background-color: black;
+  border: 1px solid #333;
+  background-color: #1b1b1b;
   box-sizing: border-box;
 }
 
@@ -100,9 +100,8 @@ button:hover {
   margin-top: 1%;
   position: relative;
   color: #ccc;
-  border: 3px solid #222222;
+  border: 3px solid #333;
   border-radius: 5%;
-  background-color: #000000;
   padding: 2%;
   width: 75%;
   font-size: 12px;

@@ -3,6 +3,7 @@ var User = require('../models/user');
 var mongoose = require('mongoose');
 
 exports.post_user = function (req, res, next) {
+    console.log("teste");
     User.find({ name: req.body.name})
         .exec(function (err, user) {
             if (err) { return next(err) }

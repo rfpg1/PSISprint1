@@ -3,10 +3,10 @@ var User = require('../models/user');
 var mongoose = require('mongoose');
 
 exports.get_user = function (req, res, next) {
-    console.log(req.params)
-    console.log(req.params.name)
-    console.log(req.params.pw)
-    User.find({ name: req.params.name, pw: req.params.pw })
+    console.log(req.query)
+    console.log(req.query.name)
+    console.log(req.query.pw)
+    User.find({ name: req.query.name, pw: req.query.pw })
         .exec(function (err, user) {
             console.log(user)
             if (err) { return next(err) }

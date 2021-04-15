@@ -57,8 +57,7 @@ export class RegistarComponent implements OnInit {
   submit() {
     var registo = { "name": this.frmSignup.value.username, "pw": this.frmSignup.value.password };
     console.log(registo)
-    return this.userService.adduser(registo).subscribe(_ => console.log("ERRO"))
-
+    this.userService.adduser(registo)
   }
 
   ngOnInit(): void {

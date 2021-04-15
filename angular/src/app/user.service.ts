@@ -13,9 +13,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  adduser(registo: any): Observable<any> {
+  adduser(registo: any){
     return this.http.post<any>("http://appserver.alunos.di.fc.ul.pt:3054/user/regist", registo, this.httpOptions).subscribe(r=>{})
-    )
   }
 
   /**

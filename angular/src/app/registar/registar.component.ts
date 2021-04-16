@@ -67,7 +67,7 @@ export class RegistarComponent implements OnInit {
       else {
         this.jaExiste = false;
         this.registou = true;
-        this.router.navigate(["/login"]);
+        this.router.navigate(["/dashboard"]);
       }
     });
   }

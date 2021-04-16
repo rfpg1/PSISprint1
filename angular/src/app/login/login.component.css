@@ -4,6 +4,12 @@
     font-family: 'Trebuchet MS', sans-serif;
 }
 
+.material-icons {
+  display: inline-flex;
+  vertical-align: middle;
+  font-family: "Material Icons";
+}
+
 .bg {
   background-image: url("src\assets\images\fundo.jpg");
   padding-top: 2%;

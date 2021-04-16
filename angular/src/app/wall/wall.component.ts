@@ -22,7 +22,10 @@ export class WallComponent implements OnInit {
 
   getMostRecentImages(): void {
     this.imageService.getMostRecentImages()
-      .subscribe(pics => this.pics = pics);
+      .subscribe(pics => {
+        this.pics = pics
+        console.log(this.pics)
+      });
   }
 
   getMostLikesImages(): void {
@@ -31,6 +34,7 @@ export class WallComponent implements OnInit {
   }
 
   openDialog(pic: Photo): void {
+    console.log(pic)
     this.dialog.open(PhotoViewerComponent, {
       data: pic,
       width: '70%',

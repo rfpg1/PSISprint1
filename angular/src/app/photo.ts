@@ -3,5 +3,5 @@ export interface Photo {
     photo: String,
     likes: Number,
     date: Date,
-    description: String
+    descricao: String
 }

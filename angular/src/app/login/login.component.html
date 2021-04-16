@@ -1,0 +1,26 @@
+<body>
+    <div class="bg">
+        <h2><b>Login</b></h2>
+        <div class="container">
+            <form [formGroup]="frmSignup" (submit)="submit()">
+                <label for="username"><b>Username</b></label>
+                <input type="text" formControlName="username" type="text" class="form-control" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" formControlName="password" type="password" class="form-control" required>
+
+                <label class="col" *ngIf="falhaLogin" class="text-danger">
+                    <i class="material-icons">{{ 'cancel' }}</i>
+                    Username ou password errados!
+                </label>
+
+                <button type="submit">Login</button>
+            </form>
+            <div class="novaConta">
+                <h1>Ainda não tem uma conta?</h1>
+                <button routerLink="/registar">Registar nova conta</button>
+            </div>
+        </div>
+
+    </div>
+</body>

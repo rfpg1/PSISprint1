@@ -1,0 +1,16 @@
+<meta http-equiv="Content Type" content="text/html; charset=utf8">
+<div class="navbar">
+    <ul>
+        <li class="user" *ngIf="loggedIn()"> <button routerLink="/profile">{{user}}</button></li>
+        <li class="upload" *ngIf="loggedIn()"> <button (click)="logout()">Logout</button></li>
+        <li class="upload" *ngIf="loggedIn()"> <button (click)="goToDashboard()">Wall</button></li>
+    </ul>
+</div>
+
+<div class="wall">
+    <ul>
+        <li *ngFor="let pic of pics">
+            <button (click)="openDialog(pic)" style="background: url({{pic.photo}}); background-size: cover;"></button>
+        </li>
+    </ul>
+</div>

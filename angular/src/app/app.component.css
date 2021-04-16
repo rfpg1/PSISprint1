@@ -1,0 +1,12 @@
+nav {
+    background: #1b1b1b;
+}
+
+nav img {
+    width: 12%;
+    padding: 1% 0 0 3%;
+}
+
+nav img:hover {
+    cursor: pointer;
+}

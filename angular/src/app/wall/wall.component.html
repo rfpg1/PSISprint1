@@ -1,0 +1,26 @@
+<meta http-equiv="Content Type" content="text/html; charset=utf8">
+<div class="navbar">
+    <ul>
+        <li class="dropdown"><button>Sort By <mat-icon class="expand">expand_more</mat-icon></button>
+            <div class="dropdown_content">
+                <ul>
+                    <li><button (click)="getMostRecentImages()">Recent</button></li>
+                    <li><button (click)="getMostLikesImages()">Likes</button></li>
+                </ul>
+            </div>
+        </li>
+        <li class="upload" *ngIf="loggedIn()"> <button (click)="logout()">Logout</button></li>
+        <li class="myProfile" *ngIf="loggedIn()"><button (click)="goToProfile()">My Profile</button></li>
+        <li class="upload" *ngIf="loggedIn()"> <button (click)="onUpload()">Upload</button></li>
+        <li class="upload" *ngIf="!loggedIn()"> <button routerLink="/login">Login</button></li>
+        <li class="upload" *ngIf="!loggedIn()"> <button routerLink="/registar">Registo</button></li>
+    </ul>
+</div>
+
+<div class="wall">
+    <ul>
+        <li *ngFor="let pic of pics">
+            <button (click)="openDialog(pic)" style="background: url({{pic.photo}}); background-size: cover;"></button>
+        </li>
+    </ul>
+</div>

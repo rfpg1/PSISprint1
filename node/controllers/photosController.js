@@ -8,6 +8,16 @@ exports.post_photo = function (req, res, next) {
     })
 };
 
+exports.get_userPhotos = function (req, res, next) {
+    var utilizador = req.query.user;
+    //console.log(user);
+    Photo.find({user: utilizador})
+        .exec(function (err, user_photos) {
+            if (err) { return next(err); }
+            res.json(user_photos);
+        });
+};
+
 exports.delete_photo = function (req, res, next) {
     var id = req.params.id;
     Hero.findByIdAndDelete(id, function (err, photo) {

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { Photo } from './photo';
-import { IMAGES } from './mock-images';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { catchError, tap } from 'rxjs/operators'

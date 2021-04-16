@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Photo } from '../photo';
 import { ImageService } from '../image.service';
 import { PhotoViewerComponent } from '../photo-viewer/photo-viewer.component';
+import { UploadComponent } from '../upload/upload.component';
 
 @Component({
   selector: 'app-wall',
@@ -44,6 +45,20 @@ export class WallComponent implements OnInit {
   }
 
   loggedIn(): Boolean {
-    return localStorage.getItem("login") !== null;
+    return localStorage.getItem("login") === "true";
+  }
+
+  logout(): void {
+    localStorage.setItem("login", "false")
+    localStorage.removeItem("user")
+    window.location.reload();
+  }
+
+  onUpload(): void {
+    this.dialog.open(UploadComponent, {
+      width: '70%',
+      panelClass: 'myPanel',
+      backdropClass: 'bdrop'
+    });
   }
 }

@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistarComponent } from './registar/registar.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RegistarComponent } from './registar/registar.component';
     WallComponent,
     PhotoViewerComponent,
     LoginComponent,
-    RegistarComponent
+    RegistarComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

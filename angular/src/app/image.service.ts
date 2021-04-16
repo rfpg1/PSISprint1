@@ -37,6 +37,22 @@ export class ImageService {
       );
   }
 
+  addPhoto(photo): Observable<Photo[]> {
+    //this.photos.push(photo)
+    return this.http.post<any>(`${this.imageUrl}/photo/photo`, photo, this.httpOptions).pipe(tap(a=>{}))
+    //return this.http.post<any>("http://appserver.alunos.di.fc.ul.pt:3054/user/regist", registo, this.httpOptions).pipe(tap(a => { }))
+  }
+
+  deletePhoto(photo) {
+    /*
+    for(var i = 0; i < this.photos.length; i++) {
+      if(this.photos[i] === photo) {
+        this.photos.splice(i, 1);
+      }
+    } 
+    */
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

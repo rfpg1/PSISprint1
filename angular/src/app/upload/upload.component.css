@@ -1,12 +1,17 @@
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
 ::ng-deep .myPanel .mat-dialog-container {
-    background: black;
+    background: #1b1b1b;
     border-radius: 1%;
     color: #e6e6e6;
     font-size: 1.2em;
     font-family: Arial, Helvetica, sans-serif;
     border: 1px solid #e6e6e6;
-    margin: 0;
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -20,11 +25,13 @@ form button {
 }
 
 div {
-    color: orange;
+    color: #ccc;
 }
 
-input, label, button {
-    display:block;
+input,
+label,
+button {
+    display: block;
 }
 
 .mat-dialog-content {
@@ -52,4 +59,39 @@ input, label, button {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+.upload {
+    background-color: #111111;
+    padding: 1%;
+    color: #ccc;
+    border: 2px rgb(63, 62, 62);
+    border-bottom: 2px solid darkorange;
+}
+
+.upload:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+}
+
+::-webkit-file-upload-button {
+    background-color: #111111;
+    padding: 1%;
+    color: #ccc;
+    border: 2px rgb(63, 62, 62);
+    border-bottom: 2px solid darkorange;
+}
+
+::-webkit-file-upload-button:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+.text {
+    background-color: #302f2f;
+    border: 2px solid rgb(83, 83, 83);
 }

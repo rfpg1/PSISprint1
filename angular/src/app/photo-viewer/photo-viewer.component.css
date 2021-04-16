@@ -36,7 +36,6 @@
 
 .pic img {
     width: 100%;
-    
     padding: 1% 0 1% 0;
     object-fit: contain;
 }
@@ -81,4 +80,16 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+.delete {
+    background-color: #111111;
+    padding: 1%;
+    color: #ccc;
+    border: 2px rgb(63, 62, 62);
+    border-bottom: 2px solid darkorange;
+}
+
+.delete:hover {
+    background-color: black;
 }

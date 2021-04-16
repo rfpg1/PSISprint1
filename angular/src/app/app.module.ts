@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistarComponent } from './registar/registar.component';
 import { UploadComponent } from './upload/upload.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UploadComponent } from './upload/upload.component';
     PhotoViewerComponent,
     LoginComponent,
     RegistarComponent,
-    UploadComponent
+    UploadComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

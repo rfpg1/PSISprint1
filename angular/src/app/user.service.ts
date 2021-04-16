@@ -10,6 +10,8 @@ export class UserService {
 
   httpOptions = { headers: new HttpHeaders({ "Content-Type": "application/json" }) }
 
+  private imageUrl = 'http://localhost:3100'
+
   constructor(private http: HttpClient) { }
 
   adduser(registo: any): Observable<any> {
@@ -17,6 +19,7 @@ export class UserService {
   }
 
   loginuser(username, password): Observable<any> {
-    return this.http.get<any>(`http://appserver.alunos.di.fc.ul.pt:3054/user/login/?name=${username}&pw=${password}`).pipe(tap(a => { }))
+    //return this.http.get<any>(`http://appserver.alunos.di.fc.ul.pt:3054/user/login/?name=${username}&pw=${password}`).pipe(tap(a => { }))
+    return this.http.get<any>(`http://localhost:3100/user/login/?name=${username}&pw=${password}`).pipe(tap(a => { }))
   }
 }

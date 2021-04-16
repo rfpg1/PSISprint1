@@ -35,7 +35,6 @@ export class WallComponent implements OnInit {
   }
 
   openDialog(pic: Photo): void {
-    console.log(pic)
     this.dialog.open(PhotoViewerComponent, {
       data: pic,
       width: '70%',
@@ -60,5 +59,10 @@ export class WallComponent implements OnInit {
       panelClass: 'myPanel',
       backdropClass: 'bdrop'
     });
+  }
+
+  goToProfile(){
+    window.location.href = "/profile"
+    localStorage.setItem("profile", "true")
   }
 }

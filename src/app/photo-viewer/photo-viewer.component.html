@@ -1,0 +1,10 @@
+<div mat-dialog-content class="container">
+    <div class="pic">
+        <div class="user">{{pic.user}}</div> <div class="date">{{toString(pic.date)}}</div>
+        <img src="{{pic.photo}}">
+        <mat-icon class="likes">favorite</mat-icon> <mat-icon class="fav">grade</mat-icon>
+        <span class ="num_likes">{{pic.likes}} Likes</span>
+        <span class="description">{{pic.description}}</span>
+        <button (click) ="deletePhoto(pic)">Delete Photo</button>
+    </div>
+</div>

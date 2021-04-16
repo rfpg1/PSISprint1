@@ -1,0 +1,8 @@
+<div class="wall">
+    <button (click)="onUpload()">Upload</button>
+    <ul>
+        <li *ngFor="let pic of pics">
+            <a (click)="openDialog(pic)"><img src="{{pic.photo}}" alt="{{pic.description}}"></a>
+        </li>
+    </ul>    
+</div>

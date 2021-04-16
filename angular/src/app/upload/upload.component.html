@@ -2,12 +2,16 @@
         <form (submit) = "uploadFoto($event)">
             <label for="foto"></label>
             <input type="file" id="foto" name="foto" accept="image/png, image/jpeg" (change)="verificado($event)">
+            <br>
             <img *ngIf="image" src="{{image}}" id="mini">
+            <br>
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="name" maxlength="100"><br><br>
+            <input type="text" id="nome" name="name" maxlength="100">
+            <br>
             <label for="descricao">Descricao:</label>
             <textarea id="descricao" name="descricao" rows="4" cols="50" maxlength="500"></textarea>
             <span class="description"></span>
+            <br>
             <button type="submit" [disabled]="!disabled ? 'disabled':null">Upload</button>
         </form>
 </div>

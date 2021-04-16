@@ -3,7 +3,7 @@ var Photo = require('../models/photo');
 var mongoose = require('mongoose');
 
 exports.get_recent = function (req, res, next) {
-    Photo.find()
+    Photo.find({})
         .exec(function (err, list_photo){
             console.log(list_photo)
             if (err) { return next(err); }

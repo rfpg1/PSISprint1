@@ -34,9 +34,12 @@ export class LoginComponent implements OnInit {
     this.userService.loginuser(username, password).subscribe(a => {
       if (a.length > 0) {
         this.router.navigate(["/dashboard"]);
+        localStorage.setItem('login', "true");
+        localStorage.setItem('user', username);
       }
       else {
         this.falhaLogin = true;
+        localStorage.setItem('login', "false");
       }
     });
   }

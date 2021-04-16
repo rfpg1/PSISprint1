@@ -9,8 +9,10 @@
                 </ul>
             </div>
         </li>
-        <li class="myProfile"><button *ngIf="loggedIn()" >My Profile</button></li>
-        <li class="upload"> <button *ngIf="loggedIn()">Upload</button></li>
+        <li class="myProfile" *ngIf="loggedIn()"><button>My Profile</button></li>
+        <li class="upload" *ngIf="loggedIn()"> <button>Upload</button></li>
+        <li class="upload" *ngIf="!loggedIn()"> <button routerLink="/login" >Login</button></li>
+        <li class="upload" *ngIf="!loggedIn()"> <button routerLink="/registar" >Registo</button></li>
         
         
     </ul>

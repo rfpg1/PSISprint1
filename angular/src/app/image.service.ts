@@ -40,6 +40,8 @@ export class ImageService {
 
   addPhoto(photo): Observable<Photo[]> {
     //this.photos.push(photo)
+    console.log("photo");
+    console.log(photo);
     return this.http.post<any>(`${this.imageUrl}/photo/photo`, photo, this.httpOptions).pipe(tap(a=>{}))
     //return this.http.post<any>("http://appserver.alunos.di.fc.ul.pt:3054/user/regist", registo, this.httpOptions).pipe(tap(a => { }))
   }

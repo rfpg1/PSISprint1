@@ -55,7 +55,7 @@ export class WallComponent implements OnInit {
   }
 
   onUpload(): void {
-    this.dialog.open(UploadComponent, {
+    const dialogRef = this.dialog.open(UploadComponent, {
       width: '70%',
       panelClass: 'myPanel',
       backdropClass: 'bdrop'

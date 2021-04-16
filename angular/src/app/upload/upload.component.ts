@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Photo } from '../photo'
 import { ImageService } from '../image.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload',
@@ -9,11 +9,12 @@ import { ImageService } from '../image.service';
 })
 export class UploadComponent implements OnInit {
 
+
   public disabled = false;
   private ficheiro;
   public image;
 
-  constructor(private imageService: ImageService) { }
+  constructor(private imageService: ImageService, private router: Router) { }
 
   clicarFoto() {
     console.log("boas");
@@ -27,7 +28,8 @@ export class UploadComponent implements OnInit {
           reader.readAsDataURL(this.ficheiro)
           reader.onload = () => {
             var boas = { user: 'Eu', name: event.target.name.value, likes: 0, description: event.target.descricao.value, date: new Date(), photo: reader.result as String }
-            this.imageService.addPhoto(boas)
+            //this.imageService.addPhoto("boas").subscribe(r => {});
+            window.location.reload();
           }
         }
       } else {
@@ -35,7 +37,8 @@ export class UploadComponent implements OnInit {
         reader.readAsDataURL(this.ficheiro)
         reader.onload = () => {
           var boas = { user: 'Eu', name: event.target.name.value, likes: 0, description: event.target.descricao.value, date: new Date(), photo: reader.result as String }
-          this.imageService.addPhoto(boas)
+          //this.imageService.addPhoto("boas").subscribe(r => {});
+          window.location.reload();
         }
       }
     } else if (event.target.descricao.value === "") {
@@ -43,8 +46,9 @@ export class UploadComponent implements OnInit {
         const reader = new FileReader()
         reader.readAsDataURL(this.ficheiro)
         reader.onload = () => {
-          var boas = { user: 'Eu', name: this.ficheiro.name, likes: 0, description: event.target.descricao.value, date: new Date(), photo: reader.result as String }
-          this.imageService.addPhoto(boas)
+          var boas = { user: 'Eu', name: this.ficheiro.name, photo: reader.result as String, likes: 0, descricao: event.target.descricao.value, date: new Date()}
+          this.imageService.addPhoto(boas).subscribe(r => {console.log("t")})
+          window.location.reload();
         }
       }
     } else {
@@ -52,24 +56,25 @@ export class UploadComponent implements OnInit {
       reader.readAsDataURL(this.ficheiro)
       reader.onload = () => {
         var boas = { user: 'Eu', name: this.ficheiro.name, likes: 0, description: event.target.descricao.value, date: new Date(), photo: reader.result as String }
-        this.imageService.addPhoto(boas).subscribe();
-        this.imageService.getMostRecentImages();
+        //this.imageService.addPhoto("boas").subscribe(r => {});
+        //this.imageService.getMostRecentImages();
+        window.location.reload();
       }
     }
   }
 
 
-verificado(event: any) {
-  this.disabled = true;
-  this.ficheiro = (event.target as HTMLInputElement).files[0];
-  const reader = new FileReader()
-  reader.readAsDataURL(this.ficheiro)
-  reader.onload = () => {
-    this.image = reader.result as String;
+  verificado(event: any) {
+    this.disabled = true;
+    this.ficheiro = (event.target as HTMLInputElement).files[0];
+    const reader = new FileReader()
+    reader.readAsDataURL(this.ficheiro)
+    reader.onload = () => {
+      this.image = reader.result as String;
+    }
   }
-}
 
-ngOnInit(): void {
-}
+  ngOnInit(): void {
+  }
 
 }

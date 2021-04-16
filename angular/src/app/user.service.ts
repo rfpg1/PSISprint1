@@ -10,7 +10,8 @@ export class UserService {
 
   httpOptions = { headers: new HttpHeaders({ "Content-Type": "application/json" }) }
 
-  private imageUrl = 'http://localhost:3100'
+  //private imageUrl = 'http://localhost:3100'
+  private imageUrl = 'http://appserver.alunos.di.fc.ul.pt:3054'
 
   constructor(private http: HttpClient) { }
 
@@ -20,6 +21,6 @@ export class UserService {
 
   loginuser(username, password): Observable<any> {
     //return this.http.get<any>(`http://appserver.alunos.di.fc.ul.pt:3054/user/login/?name=${username}&pw=${password}`).pipe(tap(a => { }))
-    return this.http.get<any>(`http://localhost:3100/user/login/?name=${username}&pw=${password}`).pipe(tap(a => { }))
+    return this.http.get<any>(`${this.imageUrl}/user/login/?name=${username}&pw=${password}`).pipe(tap(a => { }))
   }
 }

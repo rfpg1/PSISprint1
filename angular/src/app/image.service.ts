@@ -30,7 +30,11 @@ export class ImageService {
   }
 
   getMostLikesImages(): Observable<Photo[]> {
-    return of([]);
+    return this.http.get<Photo[]>(`${this.imageUrl}/mural/favorites`)
+      .pipe(
+        tap(_ => console.log('Fetched Images')),
+        catchError(this.handleError<Photo[]>('getMostLikes', []))
+      );
   }
 
   /**

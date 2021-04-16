@@ -1,0 +1,109 @@
+* {
+    height: 100%;
+    margin: 0px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.bg {
+  background-image: url("src\assets\images\fundo.jpg");
+  padding-top: 2%;
+  background-size: 100%;
+  padding-bottom: 21%;
+  background-repeat: no-repeat;
+}
+
+h2 {
+  color: black;
+  font-size: 45px;
+  margin-left: 59%;
+  margin-top: 1%;
+}
+
+h1 {
+  color: #ccc;
+  font-size: 15px;
+  margin-top: 3%;
+}
+
+.container {
+  color: #ccc;
+  border: 3px solid #333;
+  border-radius: 5%;
+  background-color: #1b1b1b;;
+  padding: 1%;
+  width: 25%;
+  margin-left: 50%;
+  margin-top: 1%;
+}
+
+input {
+  color: #ccc;
+  width: 100%;
+  padding: 2% 2%;
+  margin: 1% 0;
+  display: inline-block;
+  border: 1px solid #333;
+  background-color: #1b1b1b;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  font-size: 15px;
+  background-color: #eb5b0d;
+  color: white;
+  padding: 1% 1%;
+  margin: 1% 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button {
+  font-size: 15px;
+  border-radius: 3%;
+  background-color: #eb5b0d;
+  color: white;
+  padding: 1% 1%;
+  margin: 1% 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 600px) {
+  .bg {
+    background-color: black;
+    background-image: url("src\assets\images\fundotlm.jpg");
+    padding-bottom: 100%;
+  }
+
+  .container {
+  position: relative;
+  color: #ccc;
+  border: 3px solid #333;
+  border-radius: 5%;
+  background-color: #1b1b1b;
+  padding: 2%;
+  width: 75%;
+  font-size: 12px;
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  }
+
+  h2 {
+  font-size: 30px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  }
+
+  h1 {
+  font-size: 10px;
+}
+
+}

@@ -1,6 +1,6 @@
 
 .wall {
-    min-height: -webkit-fill-available;
+    min-height: 100vh;
     height: auto;
     background: linear-gradient(0deg, black, #1b1b1b);
     margin-top: -2%;

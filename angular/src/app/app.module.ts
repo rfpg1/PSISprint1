@@ -9,12 +9,17 @@ import { PhotoViewerComponent } from './photo-viewer/photo-viewer.component';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon'
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RegistarComponent } from './registar/registar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WallComponent,
-    PhotoViewerComponent
+    PhotoViewerComponent,
+    LoginComponent,
+    RegistarComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     NoopAnimationsModule,
     MatDialogModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}

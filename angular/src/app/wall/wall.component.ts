@@ -17,21 +17,29 @@ export class WallComponent implements OnInit {
   constructor(private imageService: ImageService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.getImages();
+    this.getMostRecentImages();
   }
 
-  getImages(): void {
-    this.imageService.getImages()
+  getMostRecentImages(): void {
+    this.imageService.getMostRecentImages()
+      .subscribe(pics => this.pics = pics);
+  }
+
+  getMostLikesImages(): void {
+    this.imageService.getMostLikesImages()
       .subscribe(pics => this.pics = pics);
   }
 
   openDialog(pic: Photo): void {
     this.dialog.open(PhotoViewerComponent, {
       data: pic,
-      width: '40em',
-      height: '50em',
+      width: '70%',
       panelClass: 'myPanel',
       backdropClass: 'bdrop'
     });
+  }
+
+  loggedIn(): Boolean {
+    return true;
   }
 }

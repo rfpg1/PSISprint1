@@ -1,35 +1,96 @@
+
 .wall {
-    width: 100%;
-    min-height: 100%;
+    min-height: -webkit-fill-available;
     height: auto;
-    background: linear-gradient(0deg, #333, black);
+    background: linear-gradient(0deg, black, #1b1b1b);
+    margin-top: -2%;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.wall ul {
+ul {
     list-style: none;
+    width: 100%;
     margin: 0;
     padding: 0;
-    overflow: visible;
+}
+
+li {
+    float: left;
 }
 
 .wall li {
     float: left;
-    height: 11.7em;
-    width: 20.8em;
     margin: .5em;
-    
 }
 
-.wall li img {
+.upload, .myProfile {
+    float: right;
+}
+
+@media only screen and (min-width: 768px) {
+    /* tables and desktop layout */
+    .wall li {
+        height: 12em;
+        width: 20em;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .wall li {
+        height: 10em;
+        width: 45%;
+    }
+}
+
+.wall li button {
     height: 100%;
     width: 100%;
-    object-fit: cover;
     border-radius: 2%;
-    border-top: .5px solid gray;
+    border: none;
 }
 
-.wall li img:hover {
+button:hover {
     cursor: pointer;
+}
+
+.navbar {
+    background: #1b1b1b;
+    margin-bottom: 2%;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    display: flex;
+}
+
+.navbar button {
+    background: transparent;
+    height: 90%;
+    color: whitesmoke;
+    border: none;
+    text-align: center;
+    padding: 2%;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    width: 90%;
+    border-bottom: 1px solid darkorange;
+}
+
+.navbar li:first-child {
+    border-left: none;
+    border-right: 1px solid gray;
+}
+
+.navbar li {
+    width: 8em;
+    border-left: 1px solid gray;
+    height: 100%;
+    text-align: center;
+}
+
+.navbar ul {
+    height: 3em;
 }
 
 ::ng-deep .bdrop {
@@ -38,4 +99,48 @@
 
 ::ng-deep .bdrop:hover {
     cursor: pointer;
+}
+
+.expand {
+    font-size: 1em;
+}
+
+.navbar li:hover {
+    background: #0d0d0d;
+}
+
+.wall button:hover {
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+}
+
+.dropdown_content {
+    position: absolute;
+    display: none;
+    top: 9.4em;
+}
+
+.dropdown_content ul {
+    background: #1b1b1b;
+    height: auto;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    display: inline-block;
+    width: 8em;
+}
+
+.dropdown_content li{
+    height: 3em;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color: gray;
+    width: 100%;
+}
+
+.dropdown_content li:first-child {
+    border: none;
+}
+
+.dropdown:hover .dropdown_content {
+    display: block;
 }

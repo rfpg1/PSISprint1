@@ -11,8 +11,12 @@ export class ImageService {
 
   constructor() { }
   
-  getImages(): Observable<Photo[]> {
+  getMostRecentImages(): Observable<Photo[]> {
     const images = of(IMAGES);
     return images;
+  }
+
+  getMostLikesImages(): Observable<Photo[]> {
+    return of([]);
   }
 }

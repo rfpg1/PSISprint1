@@ -1,7 +1,26 @@
+<meta http-equiv="Content Type" content="text/html; charset=utf8">
+<div class="navbar">
+    <ul>
+        <li  class="dropdown"><button>Sort By <mat-icon class="expand">expand_more</mat-icon></button>
+            <div class="dropdown_content">
+                <ul>
+                    <li><button (click)="getMostRecentImages()">Recent</button></li>
+                    <li><button (click)="getMostLikesImages()">Likes</button></li>
+                </ul>
+            </div>
+        </li>
+        <li class="myProfile"><button *ngIf="loggedIn()" >My Profile</button></li>
+        <li class="upload"> <button *ngIf="loggedIn()">Upload</button></li>
+        
+        
+    </ul>
+</div>
+
 <div class="wall">
     <ul>
         <li *ngFor="let pic of pics">
-            <a (click)="openDialog(pic)"><img src="{{pic.photo}}" alt="{{pic.description}}"></a>
+            <!--<a (click)="openDialog(pic)"><img src="{{pic.photo}}" alt="{{pic.description}}"></a>!-->
+            <button (click)="openDialog(pic)" style="background: url({{pic.photo}}); background-size: cover;"></button>
         </li>
     </ul>    
 </div>

@@ -1,8 +1,8 @@
 <div mat-dialog-content class="container">
     <div class="pic">
-        <div class="user">{{pic.user}}</div> <div class="date">{{pic.date}}</div>
+        <div class="user">{{pic.user}}</div> <div class="date">{{pic.date | date: 'dd/MM/yyyy HH:mm'}}</div>
         <img src="{{pic.photo}}">
-        <mat-icon class="likes">favorite</mat-icon> <mat-icon class="fav">grade</mat-icon>
+        <mat-icon class="likes">favorite</mat-icon> <span>{{pic.name}}</span><mat-icon class="fav">grade</mat-icon>
         <span class ="num_likes">{{pic.likes}} Likes</span>
         <span class="description">{{pic.descricao}}</span>
     </div>

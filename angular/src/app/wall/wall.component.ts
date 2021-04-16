@@ -44,7 +44,6 @@ export class WallComponent implements OnInit {
   }
 
   loggedIn(): Boolean {
-    console.log();
     return localStorage.getItem("login") !== null;
   }
 }

@@ -14,8 +14,4 @@ export class PhotoViewerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  toString(date: Date): String {
-    return date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear() + ' ' + date.getHours() + ':' + date.getMinutes();
-  }
 }

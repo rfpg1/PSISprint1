@@ -6,7 +6,8 @@ var Photo = new Schema({
     user: {type: String},
     name: {type: String},
     photo: {type: String},
-    likes: {type: Number} ,
+    likes: {type: Number},
+    descricao: {type: String},
     date: {type: Date},
 });
 

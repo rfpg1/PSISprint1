@@ -8,7 +8,11 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var muralRouter = require('./routes/mural');
 
+var cors = require('cors')
+
 var app = express();
+
+app.use(cors())
 
 //Set up mongoose connection
 var mongoose = require('mongoose');

@@ -4,6 +4,7 @@ import { CustomValidators } from '../custom-validators';
 import { HttpHeaders } from '@angular/common/http'
 import { UserService } from '../user.service'
 import { Router } from '@angular/router';
+import { ImageService } from '../image.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   public falhaLogin = false;
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router, private imageService: ImageService) {
     this.frmSignup = this.createSignupForm();
   }
 

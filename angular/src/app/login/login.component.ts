@@ -33,6 +33,15 @@ export class LoginComponent implements OnInit {
     var password = this.frmSignup.value.password;
     this.userService.loginuser(username, password).subscribe(a => {
       if (a.length > 0) {
+        this.imageService.getMyPhotos(username).subscribe(photos => {
+          if(photos.length > 0){
+            this.router.navigate(["/profile"]);
+            localStorage.setItem("profile", "true")
+          } else {
+            this.router.navigate(["/dashboard"]);
+            localStorage.setItem("profile", "false")
+          }
+        })
         this.router.navigate(["/dashboard"]);
         localStorage.setItem('login', "true");
         localStorage.setItem('user', username);

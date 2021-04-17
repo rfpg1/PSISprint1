@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PhotoHub Wall';
+
+  goToDashboard(){
+    window.location.href = "/dashboard"
+    localStorage.setItem("profile", "false")
+  }
 }

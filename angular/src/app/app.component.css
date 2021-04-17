@@ -2,11 +2,11 @@ nav {
     background: #1b1b1b;
 }
 
-nav button img {
+nav img {
     width: 12%;
     padding: 1% 0 0 3%;
 }
 
-nav button img:hover {
+nav img:hover {
     cursor: pointer;
 }

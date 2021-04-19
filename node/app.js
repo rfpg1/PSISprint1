@@ -16,6 +16,12 @@ var app = express();
 
 app.use(cors())
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 //Set up mongoose connection
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://psi004:psi004@localhost:27017/psi004?retryWrites=true&authSource=psi004';

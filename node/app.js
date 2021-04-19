@@ -10,7 +10,7 @@ var muralRouter = require('./routes/mural');
 var photosRouter = require('./routes/photos');
 
 
-var cors = require('cors')
+//var cors = require('cors')
 
 const expressApp = express();
 
@@ -24,7 +24,7 @@ expressApp.use(cors({
 
 var app = express();
 
-app.use(cors())
+//app.use(cors())
 
 //Set up mongoose connection
 var mongoose = require('mongoose');

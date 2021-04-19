@@ -10,7 +10,7 @@ var muralRouter = require('./routes/mural');
 var photosRouter = require('./routes/photos');
 
 
-//var cors = require('cors')
+var cors = require('cors')
 
 const expressApp = express();
 

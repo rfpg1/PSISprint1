@@ -14,7 +14,7 @@ export class ImageService {
   private imageUrl = 'http://appserver.alunos.di.fc.ul.pt:3054'
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest',})
+    headers: new HttpHeaders({ 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest', })
   }
 
   constructor(private http: HttpClient) { }
@@ -38,7 +38,9 @@ export class ImageService {
 
   addPhoto(photo): Observable<Photo> {
     console.log("Teste")
-    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, this.httpOptions).pipe(
+    let header = new HttpHeaders();
+    header.set('Access-Control-Allow-Origin', '*');
+    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, header).pipe(
       tap(_ => console.log('Upload Photo')),
       catchError(this.handleError<any>('addPhoto', ''))
     );

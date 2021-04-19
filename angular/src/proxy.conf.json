@@ -1,5 +1,5 @@
 {
-    "http://appserver.alunos.di.fc.ul.pt:3054/*": {
+    "/http://appserver.alunos.di.fc.ul.pt:3004/*": {
         "target": "http://appserver.alunos.di.fc.ul.pt:3054",
         "secure": false,
         "logLevel": "debug",

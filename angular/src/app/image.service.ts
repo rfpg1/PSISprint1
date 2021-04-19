@@ -40,7 +40,7 @@ export class ImageService {
     console.log("Teste")
     let header = new HttpHeaders();
     header.set('Access-Control-Allow-Origin', '*');
-    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, header).pipe(
+    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, { headers: header }).pipe(
       tap(_ => console.log('Upload Photo')),
       catchError(this.handleError<any>('addPhoto', ''))
     );

@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "http://appserver.alunos.di.fc.ul.pt:3004",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

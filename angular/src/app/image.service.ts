@@ -37,7 +37,11 @@ export class ImageService {
   }
 
   addPhoto(photo): Observable<Photo> {
-    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, this.httpOptions).pipe(
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Accept', 'q=0.8;application/json;q=0.9');
+    let options = new HttpHeaders({ headers: headers });
+
+    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, options).pipe(
       tap(_ => console.log('Upload Photo')),
       catchError(this.handleError<any>('addPhoto', ''))
     );

@@ -12,15 +12,19 @@ var photosRouter = require('./routes/photos');
 
 var cors = require('cors')
 
+const expressApp = express();
+
+expressApp.use(cors({
+    origin: ['http://appserver.alunos.di.fc.ul.pt:3004'],
+    "methods": "GET,PUT,POST",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204,
+    credentials: true
+}));
+
 var app = express();
 
 app.use(cors())
-
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 
 //Set up mongoose connection
 var mongoose = require('mongoose');

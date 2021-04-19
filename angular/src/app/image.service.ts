@@ -14,7 +14,7 @@ export class ImageService {
   private imageUrl = 'http://appserver.alunos.di.fc.ul.pt:3054'
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Accept':'q=0.8;application/json;q=0.9' })
   }
 
   constructor(private http: HttpClient) { }
@@ -37,11 +37,7 @@ export class ImageService {
   }
 
   addPhoto(photo): Observable<Photo> {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    headers.append('Accept', 'q=0.8;application/json;q=0.9');
-    let options = new HttpHeaders({ headers: headers });
-
-    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, options).pipe(
+    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, this.httpOptions).pipe(
       tap(_ => console.log('Upload Photo')),
       catchError(this.handleError<any>('addPhoto', ''))
     );

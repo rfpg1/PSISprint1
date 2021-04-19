@@ -15,11 +15,10 @@ var cors = require('cors')
 const expressApp = express();
 
 expressApp.use(cors({
-    origin: ['http://appserver.alunos.di.fc.ul.pt:3004'],
+    origin: "*",
     "methods": "GET,PUT,POST",
     "preflightContinue": false,
-    "optionsSuccessStatus": 204,
-    credentials: true
+    "optionsSuccessStatus": 204
 }));
 
 var app = express();

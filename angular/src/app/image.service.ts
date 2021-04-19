@@ -14,9 +14,7 @@ export class ImageService {
   private imageUrl = 'http://appserver.alunos.di.fc.ul.pt:3054'
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json', 
-                              'Accept': 'application/json',
-                              'Access-Control-Allow-Origin': '/'})
+    headers: new HttpHeaders({ 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest',})
   }
 
   constructor(private http: HttpClient) { }

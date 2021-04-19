@@ -36,8 +36,11 @@ export class ImageService {
       );
   }
 
-  addPhoto(photo): Observable<Photo[]> {
-    return this.http.post<any>(`${this.imageUrl}/photo/photo`, photo, this.httpOptions).pipe(tap(a => { }))
+  addPhoto(photo): Observable<Photo> {
+    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, this.httpOptions).pipe(
+      tap(_ => console.log('Upload Photo')),
+      catchError(this.handleError<Photo[]>('addPhoto', []))
+    );
   }
 
   deletePhoto(photo) {

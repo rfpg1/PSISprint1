@@ -68,13 +68,15 @@ export class UploadComponent implements OnInit {
       var boas;
       if(!(this.name === undefined)){
         if(this.descricao === undefined){
-          boas = { user: localStorage.getItem("user"), name: this.name.value, likes: 0, descricao: "", date: new Date(), photo: reader.result as String }
+          if (confirm("Quer enviar a imagem sem a descricao")) 
+            boas = { user: localStorage.getItem("user"), name: this.name.value, likes: 0, descricao: "", date: new Date(), photo: reader.result as String }
         } else {
           boas = { user: localStorage.getItem("user"), name: this.name.value, likes: 0, descricao: this.descricao.value, date: new Date(), photo: reader.result as String }
         }
       } else {
         if(this.descricao == undefined){
-          boas = { user: localStorage.getItem("user"), name: this.ficheiro.name, likes: 0, descricao: "", date: new Date(), photo: reader.result as String }
+          if (confirm("Quer enviar a imagem sem a descricao")) 
+            boas = { user: localStorage.getItem("user"), name: this.ficheiro.name, likes: 0, descricao: "", date: new Date(), photo: reader.result as String }
         } else {
           boas = { user: localStorage.getItem("user"), name: this.ficheiro.name, likes: 0, descricao: this.descricao.value, date: new Date(), photo: reader.result as String }
         }

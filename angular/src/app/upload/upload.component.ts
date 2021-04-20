@@ -66,6 +66,8 @@ export class UploadComponent implements OnInit {
     reader.readAsDataURL(this.ficheiro)
     reader.onload = () => {
       var boas;
+      console.log(this.name)
+      console.log(this.descricao)
       if(!(this.name === undefined)){
         if(this.descricao === undefined){
           if (confirm("Quer enviar a imagem sem a descricao")) 

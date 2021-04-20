@@ -12,6 +12,6 @@
         <textarea id="descricao" [(ngModel)]="descricao" name="descricao" rows="4" cols="50" maxlength="500" class="text"></textarea>
         <span class="description"></span>
         <br>
-        <button mat-dialog-close class="upload" (click)="uploadFoto()" [disabled]="!disabled ? 'disabled':null">Upload</button>
+        <button class="upload" (click)="uploadFoto()" [disabled]="!disabled ? 'disabled':null">Upload</button>
     </form>
 </div>

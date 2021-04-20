@@ -21,15 +21,32 @@ export class UploadComponent implements OnInit {
   clicarFoto() {
     console.log("boas");
   }
-/*
-  uploadFoto() {
-    if (!(this.name === undefined)) {
-      if (this.descricao === undefined) {
+  /*
+    uploadFoto() {
+      if (!(this.name === undefined)) {
+        if (this.descricao === undefined) {
+          if (confirm("Quer enviar a imagem sem a descricao")) {
+            const reader = new FileReader()
+            reader.readAsDataURL(this.ficheiro)
+            reader.onload = () => {
+              var boas = { user: localStorage.getItem("user"), name: this.name.value, likes: 0, descricao: "", date: new Date(), photo: reader.result as String }
+              this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
+            }
+          }
+        } else {
+          const reader = new FileReader()
+          reader.readAsDataURL(this.ficheiro)
+          reader.onload = () => {
+            var boas = { user: localStorage.getItem("user"), name: this.name.value, likes: 0, descricao: this.descricao.value, date: new Date(), photo: reader.result as String }
+            this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
+          }
+        }
+      } else if (this.descricao === undefined) {
         if (confirm("Quer enviar a imagem sem a descricao")) {
           const reader = new FileReader()
           reader.readAsDataURL(this.ficheiro)
           reader.onload = () => {
-            var boas = { user: localStorage.getItem("user"), name: this.name.value, likes: 0, descricao: "", date: new Date(), photo: reader.result as String }
+            var boas = { user: localStorage.getItem("user"), name: this.ficheiro.name, photo: reader.result as String, likes: 0, descricao: "", date: new Date() }
             this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
           }
         }
@@ -37,57 +54,40 @@ export class UploadComponent implements OnInit {
         const reader = new FileReader()
         reader.readAsDataURL(this.ficheiro)
         reader.onload = () => {
-          var boas = { user: localStorage.getItem("user"), name: this.name.value, likes: 0, descricao: this.descricao.value, date: new Date(), photo: reader.result as String }
+          var boas = { user: localStorage.getItem("user"), name: this.ficheiro.name, likes: 0, descricao: this.descricao.value, date: new Date(), photo: reader.result as String }
           this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
         }
-      }
-    } else if (this.descricao === undefined) {
-      if (confirm("Quer enviar a imagem sem a descricao")) {
-        const reader = new FileReader()
-        reader.readAsDataURL(this.ficheiro)
-        reader.onload = () => {
-          var boas = { user: localStorage.getItem("user"), name: this.ficheiro.name, photo: reader.result as String, likes: 0, descricao: "", date: new Date() }
-          this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
-        }
-      }
-    } else {
-      const reader = new FileReader()
-      reader.readAsDataURL(this.ficheiro)
-      reader.onload = () => {
-        var boas = { user: localStorage.getItem("user"), name: this.ficheiro.name, likes: 0, descricao: this.descricao.value, date: new Date(), photo: reader.result as String }
-        this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
       }
     }
-  }
-  */
+    */
 
-  uploadFoto(){
+  uploadFoto() {
     const reader = new FileReader()
     reader.readAsDataURL(this.ficheiro)
     reader.onload = () => {
       var boas;
       console.log(this.name)
       console.log(this.descricao)
-      if(!(this.name === undefined)){
-        if(this.descricao === undefined){
-          if (confirm("Quer enviar a imagem sem a descricao")) 
+      if (!(this.name === undefined)) {
+        if (this.descricao === undefined) {
+          if (confirm("Quer enviar a imagem sem a descricao"))
             boas = { user: localStorage.getItem("user"), name: this.name.value, likes: 0, descricao: "", date: new Date(), photo: reader.result as String }
-            this.imageService.addPhoto(boas).subscribe(r => { })
+          this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
         } else {
           boas = { user: localStorage.getItem("user"), name: this.name.value, likes: 0, descricao: this.descricao, date: new Date(), photo: reader.result as String }
-          this.imageService.addPhoto(boas).subscribe(r => { })
+          this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
         }
       } else {
-        if(this.descricao == undefined){
-          if (confirm("Quer enviar a imagem sem a descricao")) 
+        if (this.descricao == undefined) {
+          if (confirm("Quer enviar a imagem sem a descricao"))
             boas = { user: localStorage.getItem("user"), name: this.ficheiro.name, likes: 0, descricao: "", date: new Date(), photo: reader.result as String }
-            this.imageService.addPhoto(boas).subscribe(r => { })
+          this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
         } else {
           boas = { user: localStorage.getItem("user"), name: this.ficheiro.name, likes: 0, descricao: this.descricao, date: new Date(), photo: reader.result as String }
-          this.imageService.addPhoto(boas).subscribe(r => { })
+          this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
         }
       }
-      
+
     }
   }
 

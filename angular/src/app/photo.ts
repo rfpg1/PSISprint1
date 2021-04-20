@@ -1,8 +1,8 @@
 export interface Photo {
     user: String,
     name: String,
-    photo: String,
     likes: Number,
+    descricao: String,
     date: Date,
-    descricao: String
+    photo: String,
 }

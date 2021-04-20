@@ -2,7 +2,7 @@ var Photo = require('../models/photo');
 
 exports.post_photo = function(req, res, next) {
     console.log("t")
-    var Cr7 = new Photo({ "user": req.body.user, "name": req.body.name, "photo": req.body.photo, "descricao": req.body.descricao, "likes": req.body.likes, "date": Date.now() });
+    var Cr7 = new Photo({ "user": req.body.user, "name": req.body.name, "likes": req.body.likes, "descricao": req.body.descricao, "date": Date.now(), "photo": req.body.photo });
     Cr7.save(function(err, photo) {
         if (err) { return next(err) }
         res.json(photo);

@@ -11,6 +11,7 @@ import { catchError, tap } from 'rxjs/operators'
 })
 export class ImageService {
 
+  //private imageUrl = 'http://localhost:3054'
   private imageUrl = 'http://appserver.alunos.di.fc.ul.pt:3054'
 
   httpOptions = {
@@ -37,7 +38,6 @@ export class ImageService {
   }
 
   addPhoto(photo): Observable<Photo> {
-    console.log("Teste")
     let header = new HttpHeaders();
     header.set('Access-Control-Allow-Origin', '*');
     return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, { headers: header }).pipe(

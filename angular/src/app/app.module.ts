@@ -10,7 +10,7 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
 import { MatIconModule } from '@angular/material/icon'
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistarComponent } from './registar/registar.component';
 import { UploadComponent } from './upload/upload.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -32,7 +32,8 @@ import { ProfileComponent } from './profile/profile.component';
     MatDialogModule,
     MatIconModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}

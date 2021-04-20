@@ -21,9 +21,10 @@ export class PhotoViewerComponent implements OnInit {
   }
 
   deletePhoto(pic) {
-    if(confirm("Deseja apagar a fotografia")){
-      this.imageService.deletePhoto(pic).subscribe(r => {console.log("t")});
-      window.location.reload();
+    if (confirm("Deseja apagar a fotografia")) {
+      this.imageService.deletePhoto(pic).subscribe(r => { window.location.reload(); });
+      //window.location.reload();
+      //TODO
     }
   }
 }

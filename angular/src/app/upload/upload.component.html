@@ -1,17 +1,17 @@
 <div mat-dialog-content class="container">
-    <form (submit)="uploadFoto($event)">
+    <form>
         <label class="custom-file-upload" for="foto"></label>
         <input type="file" id="foto" name="foto" accept="image/png, image/jpeg, image/jpg" (change)="verificado($event)">
         <br>
         <img *ngIf="image" src="{{image}}" id="mini">
         <br>
         <label for="nome"><b>Nome:</b></label>
-        <input type="text" id="nome" name="name" maxlength="100" class="text">
+        <input type="text" id="nome" [(ngModel)]="name" name="name" maxlength="100" class="text">
         <br>
         <label for="descricao"><b>Descricao:</b></label>
-        <textarea id="descricao" name="descricao" rows="4" cols="50" maxlength="500" class="text"></textarea>
+        <textarea id="descricao" [(ngModel)]="descricao" name="descricao" rows="4" cols="50" maxlength="500" class="text"></textarea>
         <span class="description"></span>
         <br>
-        <button class="upload" type="submit" [disabled]="!disabled ? 'disabled':null">Upload</button>
+        <button mat-dialog-close class="upload" (click)="uploadFoto()" [disabled]="!disabled ? 'disabled':null">Upload</button>
     </form>
 </div>

@@ -4,6 +4,7 @@
         <li class="user" *ngIf="loggedIn()"> <button routerLink="/profile">{{user}}</button></li>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="logout()">Logout</button></li>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="goToDashboard()">Wall</button></li>
+        <li class="upload" *ngIf="loggedIn()"> <button (click)="onUpload()">Upload</button></li>
     </ul>
 </div>
 

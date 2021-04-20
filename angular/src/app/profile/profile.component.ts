@@ -3,6 +3,7 @@ import { Photo } from '../photo';
 import { ImageService } from '../image.service';
 import { PhotoViewerComponent } from '../photo-viewer/photo-viewer.component';
 import { MatDialog } from '@angular/material/dialog';
+import { UploadComponent } from '../upload/upload.component';
 
 @Component({
   selector: 'app-profile',
@@ -47,6 +48,14 @@ export class ProfileComponent implements OnInit {
   goToDashboard(){
     window.location.href = "/dashboard"
     localStorage.setItem("profile", "false")
+  }
+
+  onUpload(): void {
+    const dialogRef = this.dialog.open(UploadComponent, {
+      width: '70%',
+      panelClass: 'myPanel',
+      backdropClass: 'bdrop'
+    });
   }
 
 }

@@ -83,7 +83,7 @@ export class UploadComponent implements OnInit {
           boas = { user: localStorage.getItem("user"), name: this.ficheiro.name, likes: 0, descricao: this.descricao.value, date: new Date(), photo: reader.result as String }
         }
       }
-      this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
+      this.imageService.addPhoto(boas).subscribe(r => { })
     }
   }
 

@@ -65,4 +65,11 @@ export class WallComponent implements OnInit {
     window.location.href = "/profile"
     localStorage.setItem("profile", "true")
   }
+
+  expand(): void {
+    if (document.getElementById('dropdown_content').getAttribute('style') === "display: none;") 
+      document.getElementById('dropdown_content').setAttribute('style', "display: block;");
+    else
+      document.getElementById('dropdown_content').setAttribute('style', "display: none;");
+  }
 }

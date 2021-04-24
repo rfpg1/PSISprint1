@@ -81,6 +81,7 @@ button:hover {
 .navbar li:first-child {
     border-left: none;
     border-right: 1px solid gray;
+    margin-right: auto;
 }
 
 .navbar li {
@@ -92,6 +93,8 @@ button:hover {
 
 .navbar ul {
     height: 3em;
+    display: flex;
+    justify-content: flex-end;
 }
 
 ::ng-deep .bdrop {
@@ -115,13 +118,12 @@ button:hover {
     -webkit-filter: blur(1px);
 }
 
-.dropdown_content {
+#dropdown_content {
     position: absolute;
-    display: none;
     top: 3em;
 }
 
-.dropdown_content ul {
+#dropdown_content ul {
     background: #1b1b1b;
     height: auto;
     border-right: 1px solid gray;
@@ -130,7 +132,7 @@ button:hover {
     width: 7em;
 }
 
-.dropdown_content li{
+#dropdown_content li{
     height: 3em;
     border-style: solid;
     border-width: 1px 0 0 0;
@@ -138,10 +140,10 @@ button:hover {
     width: 100%;
 }
 
-.dropdown_content li:first-child {
+#dropdown_content li:first-child {
     border: none;
 }
 
-.dropdown:hover .dropdown_content {
-    display: block;
+.dropdown:hover #dropdown_content {
+    display: block !important;
 }

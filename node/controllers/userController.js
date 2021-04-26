@@ -1,6 +1,5 @@
 var User = require('../models/user');
-
-var mongoose = require('mongoose');
+var Like = require('../models/like');
 
 exports.get_user = function (req, res, next) {
     User.find({ name: req.query.name, pw: req.query.pw })

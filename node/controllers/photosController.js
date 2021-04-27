@@ -46,3 +46,12 @@ exports.put_like = function(req, res, next) {
         }  
     });
 };
+
+exports.get_likedPhotos = function (req, res, next) {
+    console.log(req)
+    Like.find({ user: req.body.user })
+        .exec(function(err, liked_photos) {
+            if (err) { return next(err); }
+            res.json(liked_photos);
+        });
+};

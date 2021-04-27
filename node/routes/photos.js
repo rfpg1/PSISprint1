@@ -10,4 +10,6 @@ router.get('/photo', photos_controller.get_userPhotos);
 
 router.put('/like/:id', photos_controller.put_like);
 
+router.get('/likedPhotos', photos_controller.get_likedPhotos);
+
 module.exports = router;

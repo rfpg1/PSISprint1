@@ -28,7 +28,11 @@ export class RegistarComponent implements OnInit {
       {
         username: [
           null,
-          Validators.compose([Validators.minLength(3), Validators.required])
+          Validators.compose([
+            Validators.minLength(3),
+            CustomValidators.symbolsOnly,
+            Validators.required
+          ])
         ],
         password: [
           null,

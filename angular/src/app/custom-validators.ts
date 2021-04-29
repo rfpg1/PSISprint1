@@ -25,4 +25,12 @@ export class CustomValidators {
             control.get('confirmPassword').setErrors({ NoPassswordMatch: true });
         }
     }
+
+    static symbolsOnly(control: AbstractControl) {
+        if (/^[^`~!@#$%\^&*()_+={}|[\]\\:';"<>?,./]*$/.test(control.value)) {
+            return null;
+        }
+        return { symbols: true };
+    }
+
 }

@@ -4,14 +4,18 @@
         <form [formGroup]="frmSignup" *ngIf="!registou" (submit)="submit()">
             <div>
                 <label for="username"><b>Username</b></label>
-                <input id="username" formControlName="username" type="text" class="form-control"
-                    [ngClass]="frmSignup.controls['username'].invalid ? 'is-invalid' : ''">
-                <label class="col"
-                    [ngClass]="frmSignup.controls['username'].hasError('required') || frmSignup.controls['username'].hasError('minlength') ? 'text-danger' : 'text-success'">
+                <input id="username" formControlName="username" type="text" class="form-control" [ngClass]="frmSignup.controls['username'].invalid ? 'is-invalid' : ''">
+                <label class="col" [ngClass]="frmSignup.controls['username'].hasError('required') || frmSignup.controls['username'].hasError('minlength') ? 'text-danger' : 'text-success'">
                     <i class="material-icons">{{ frmSignup.controls['username'].hasError('required') ||
                         frmSignup.controls['username'].hasError('minlength') ? 'cancel' :
                         'check_circle' }}</i>
                     Deve ter 3 ou mais carateres!
+                </label>
+                <label class="col" [ngClass]="frmSignup.controls['username'].hasError('hasLetters') ? 'text-danger' : 'text-success'">
+                    <i class="material-icons">{{ frmSignup.controls['username'].hasError('hasLetters') ?
+                        'cancel' :
+                        'check_circle' }}</i>
+                    Username não pode conter simbolos!
                 </label>
                 <label class="col" *ngIf="jaExiste" class="text-danger" id="naoRegista">
                     <i class="material-icons">{{ 'cancel' }}</i>
@@ -21,31 +25,26 @@
             </div>
             <div>
                 <label for=" password"><b>Password</b></label>
-                <input id="password" formControlName="password" type="password" class="form-control"
-                    [ngClass]="frmSignup.controls['password'].invalid ? 'is-invalid' : ''">
-                <label class="col"
-                    [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('minlength')  ? 'text-danger' : 'text-success'">
+                <input id="password" formControlName="password" type="password" class="form-control" [ngClass]="frmSignup.controls['password'].invalid ? 'is-invalid' : ''">
+                <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('minlength')  ? 'text-danger' : 'text-success'">
                     <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
                         frmSignup.controls['password'].hasError('minlength') ? 'cancel' :
                         'check_circle' }}</i>
                     Deve ter 8 ou mais carateres!
                 </label>
-                <label class="col"
-                    [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasNumber')  ? 'text-danger' : 'text-success'">
+                <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasNumber')  ? 'text-danger' : 'text-success'">
                     <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
                         frmSignup.controls['password'].hasError('hasNumber') ? 'cancel' :
                         'check_circle' }}</i>
                     Deve ter um algarismo!
                 </label>
-                <label class="col"
-                    [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasCapitalCase')  ? 'text-danger' : 'text-success'">
+                <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasCapitalCase')  ? 'text-danger' : 'text-success'">
                     <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
                         frmSignup.controls['password'].hasError('hasCapitalCase') ? 'cancel' :
                         'check_circle' }}</i>
                     Deve conter uma letra maiúscula!
                 </label>
-                <label class="col"
-                    [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasSmallCase')  ? 'text-danger' : 'text-success'">
+                <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasSmallCase')  ? 'text-danger' : 'text-success'">
                     <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
                         frmSignup.controls['password'].hasError('hasSmallCase') ? 'cancel' :
                         'check_circle' }}</i>
@@ -54,8 +53,7 @@
             </div>
             <div>
                 <label for="confirmPassword"><b>Confirmar Password</b></label>
-                <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control"
-                    [ngClass]="frmSignup.controls['confirmPassword'].invalid ? 'is-invalid' : ''">
+                <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control" [ngClass]="frmSignup.controls['confirmPassword'].invalid ? 'is-invalid' : ''">
                 <label class="text-danger" *ngIf="frmSignup.controls['confirmPassword'].hasError('required')">
                     Insira a password de novo!
                 </label>
@@ -64,8 +62,7 @@
                 </label>
             </div>
 
-            <button [disabled]="frmSignup.invalid" type="submit"
-                class="btn btn-primary btn-block font-weight-bold">Registar</button>
+            <button [disabled]="frmSignup.invalid" type="submit" class="btn btn-primary btn-block font-weight-bold">Registar</button>
 
         </form>
         <div class="login">
@@ -73,5 +70,4 @@
             <button routerLink="/login">Fazer login</button>
         </div>
     </div>
-    <!--<img src="fundo2.jpg" alt="">!-->
 </div>

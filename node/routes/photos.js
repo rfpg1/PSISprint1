@@ -8,6 +8,10 @@ router.delete('/:id', photos_controller.delete_photo);
 
 router.get('/photo', photos_controller.get_userPhotos);
 
-router.put('/like/:id', photos_controller.put_like);
+router.put('/like/:id', photos_controller.update_like);
+
+router.get('/likes', photos_controller.get_likes);
+
+router.get('/like/:id', photos_controller.is_liked);
 
 module.exports = router;

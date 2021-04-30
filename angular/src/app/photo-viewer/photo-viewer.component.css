@@ -57,6 +57,11 @@
     cursor: pointer;
 }
 
+.pic .likes {
+    color: #dcdcdc;
+    cursor: pointer;
+}
+
 .pic .description {
     width: 100%;
     padding-top: 2.5%;
@@ -92,4 +97,9 @@
 
 .delete:hover {
     background-color: black;
+}
+
+#likeButton {
+    background-color: #1b1b1b;
+    border: none;
 }

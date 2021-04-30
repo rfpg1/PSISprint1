@@ -26,10 +26,16 @@ export class CustomValidators {
         }
     }
 
-    static symbolsOnly(control: AbstractControl) {
-        if (/^[^`~!@#$%\^&*()_+={}|[\]\\:';"<>?,./]*$/.test(control.value)) {
-            return null;
-        }
-        return { symbols: true };
+    static patternValidator2(regex: RegExp, error: ValidationErrors): ValidatorFn {
+        
+        return (control: AbstractControl): { [key: string]: any } => {
+            if (!control.value) {
+                return null;
+            }
+
+            const valid = regex.test(control.value);
+            return valid ? null : error;
+        };
+        
     }
 }

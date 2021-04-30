@@ -10,8 +10,8 @@ export class UserService {
 
   httpOptions = { headers: new HttpHeaders({ "Content-Type": "application/json" }) }
 
-  private imageUrl = 'http://localhost:3054'
-  //private imageUrl = 'http://appserver.alunos.di.fc.ul.pt:3054'
+  //private imageUrl = 'http://localhost:3054'
+  private imageUrl = 'http://appserver.alunos.di.fc.ul.pt:3054'
 
   constructor(private http: HttpClient) { }
 

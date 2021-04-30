@@ -133,6 +133,12 @@ button:hover {
     display: block !important;
 }
 
+#title {
+    margin-right: 30%;
+    color: whitesmoke;
+    margin-top: 0.2%;
+}
+
 @media only screen and (min-width: 768px) {
     /* tables and desktop layout */
     .wall li {
@@ -157,8 +163,11 @@ button:hover {
     }
 }
 
-#title {
-    margin-right: 30%;
-    color: whitesmoke;
-    margin-top: 0.2%;
+@media only screen and (max-width: 767px) {
+    #title {
+        margin-right: 10%;
+        color: whitesmoke;
+        margin-top: 4%;
+        font-size: medium;
+    }
 }

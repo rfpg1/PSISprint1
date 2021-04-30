@@ -11,30 +11,13 @@ var photosRouter = require('./routes/photos');
 
 
 var cors = require('cors')
-    /*
-    const expressApp = express();
-
-    expressApp.use(cors({
-        origin: "*",
-        "methods": "GET,PUT,POST",
-        "preflightContinue": false,
-        "optionsSuccessStatus": 204
-    }));
-    */
 var app = express();
-/*
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-*/
 app.use(cors())
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://psi004:psi004@localhost:27017/psi004?retryWrites=true&authSource=psi004';
-//var mongoDB = 'mongodb+srv://rfpg1:rfpg1@cluster0.p6brr.mongodb.net/PSITP4?retryWrites=true&w=majority'
+//var mongoDB = 'mongodb://psi004:psi004@localhost:27017/psi004?retryWrites=true&authSource=psi004';
+var mongoDB = 'mongodb+srv://rfpg1:rfpg1@cluster0.p6brr.mongodb.net/PSITP4?retryWrites=true&w=majority'
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

@@ -110,6 +110,12 @@ button:hover {
     -webkit-filter: blur(1px);
 }
 
+#title {
+    margin-left: 40%;
+    color: whitesmoke;
+    margin-top: 0.2%;
+}
+
 @media only screen and (min-width: 768px) {
     /* tables and desktop layout */
     .wall li {
@@ -137,8 +143,11 @@ button:hover {
     }
 }
 
-#title {
-    margin-left: 40%;
-    color: whitesmoke;
-    margin-top: 0.2%;
+@media only screen and (max-width: 768px) {
+    #title {
+        margin-left: 29%;
+        color: whitesmoke;
+        margin-top: 4%;
+        font-size: medium;
+    }
 }

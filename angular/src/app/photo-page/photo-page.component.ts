@@ -50,6 +50,7 @@ export class PhotoPageComponent implements OnInit {
       .subscribe(pic => {
         this.pic = pic;
         this.ifIsLiked(this.pic);
+        this.isFavorite(this.pic)
       });
   }
 
@@ -74,13 +75,33 @@ export class PhotoPageComponent implements OnInit {
   ifIsLiked(photo) {
     this.imageService.isLiked(localStorage.getItem("user"), photo).subscribe(r => {
       if(r.message === "True"){
-        this.changeColor();
+        this.changeColorLike();
       }
     })
   }
 
-  changeColor() {
+  changeColorLike() {
     var like = document.getElementById("like");
     like.style.color = "red";
+  }
+
+  changeColorFavorite() {
+    var fav = document.getElementById("fav");
+    fav.style.color = "yellow";
+  }
+
+  addFav(pic){
+    const user = localStorage.getItem("user");
+    if(user !== null){
+      this.imageService.addFavorite(user, pic).subscribe(r => {window.location.reload()})
+    }
+  }
+
+  isFavorite(photo){
+    this.imageService.isFavorite(localStorage.getItem("user"), photo).subscribe(r => {
+      if(r.message === "True"){
+        this.changeColorFavorite();
+      }
+    })
   }
 }

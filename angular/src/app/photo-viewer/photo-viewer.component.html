@@ -7,8 +7,8 @@
             <mat-icon class="likes" id="like">favorite</mat-icon>
         </button>
         <span id="photoName">{{pic.name}}</span>
-        <button id="favButton">
-            <mat-icon class="fav">grade</mat-icon>
+        <button id="favButton" (click)="addFav(pic)">
+            <mat-icon class="fav" id="fav">grade</mat-icon>
         </button>
         <button id="shareButton" (click)="share()">
             <mat-icon class="share" id="share">share</mat-icon>

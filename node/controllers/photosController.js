@@ -1,5 +1,6 @@
 var Photo = require('../models/photo');
 var Like = require('../models/like');
+var Favorite = require('../models/favorite');
 
 exports.post_photo = function(req, res, next) {
     var Cr7 = new Photo({ "user": req.body.user, "name": req.body.name, "likes": req.body.likes, "descricao": req.body.descricao, "date": Date.now(), "photo": req.body.photo });
@@ -85,3 +86,35 @@ exports.is_liked = function(req, res, next) {
             }
         })
 };
+
+exports.post_favorite = function(req, res, next) {
+    const id = req.params.id
+    Favorite.find({ "user": req.body.user, "photo": id })
+        .exec(function(err, favorite) {
+            if (favorite.length !== 0) {
+                Favorite.findOneAndDelete({ "user": req.body.user, "photo": id }, function(err, favorite) {
+                    if (err) return next(err);
+                    res.json("Fav removed")
+                })
+            } else {
+                var fav = new Favorite({ "user": req.body.user, "photo": id })
+                fav.save(function(err, favorite) {
+                    if (err) return next(err)
+                    res.json(favorite)
+                })
+            }
+        })
+}
+
+exports.is_favorite = function(req, res, next) {
+    const id = req.query.id;
+    Favorite.find({ "user": req.query.user, "photo": id })
+        .exec(function(err, like) {
+            if (err) return next(err);
+            if (like.length !== 0) {
+                res.json({ message: "True" })
+            } else {
+                res.json({ message: "False" })
+            }
+        })
+}

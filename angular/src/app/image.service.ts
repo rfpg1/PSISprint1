@@ -38,9 +38,7 @@ export class ImageService {
   }
 
   addPhoto(photo): Observable<Photo> {
-    let header = new HttpHeaders();
-    header.set('Access-Control-Allow-Origin', '*');
-    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, { headers: header }).pipe(
+    return this.http.post<Photo>(`${this.imageUrl}/photo/photo`, photo, this.httpOptions).pipe(
       tap(_ => console.log('Upload Photo')),
       catchError(this.handleError<any>('addPhoto', ''))
     );
@@ -78,6 +76,20 @@ export class ImageService {
     return this.http.get<any>(`${this.imageUrl}/photo/isLiked?user=${user}&id=${photo._id}`).pipe(
       tap(_ => console.log('Probably liked')),
       catchError(this.handleError<any>('addLike', []))
+    );
+  }
+
+  addFavorite(user, photo) {
+    return this.http.post<any>(`${this.imageUrl}/photo/favorite/${photo._id}`, { user } , this.httpOptions).pipe(
+      tap(_ => console.log('Favorite Successed')),
+      catchError(this.handleError<any>('addFavorite', []))
+    );
+  }
+
+  isFavorite(user, photo) {
+    return this.http.get<any>(`${this.imageUrl}/photo/isFavorite?user=${user}&id=${photo._id}`).pipe(
+      tap(_ => console.log('Probably favorite')),
+      catchError(this.handleError<any>('isFavorite', []))
     );
   }
 

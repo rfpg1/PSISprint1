@@ -14,7 +14,8 @@ export class PhotoViewerComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public pic: Photo, private imageService: ImageService) { }
 
   ngOnInit(): void {
-    this.ifIsLiked(this.pic)
+    this.isLiked(this.pic)
+    this.isFavorite(this.pic)
   }
 
   profile(): Boolean {
@@ -34,17 +35,22 @@ export class PhotoViewerComponent implements OnInit {
     }
   }
 
-  ifIsLiked(photo) {
+  isLiked(photo) {
     this.imageService.isLiked(localStorage.getItem("user"), photo).subscribe(r => {
       if(r.message === "True"){
-        this.changeColor();
+        this.changeColorLike();
       }
     })
   }
 
-  changeColor() {
+  changeColorLike() {
     var like = document.getElementById("like");
     like.style.color = "red";
+  }
+
+  changeColorFavorite() {
+    var fav = document.getElementById("fav");
+    fav.style.color = "yellow";
   }
 
   share(){
@@ -56,5 +62,20 @@ export class PhotoViewerComponent implements OnInit {
     });
     document.execCommand("copy");
     alert("Link copiado para a clipboard!");
+  }
+
+  addFav(pic){
+    const user = localStorage.getItem("user");
+    if(user !== null){
+      this.imageService.addFavorite(user, pic).subscribe(r => {window.location.reload()})
+    }
+  }
+
+  isFavorite(photo){
+    this.imageService.isFavorite(localStorage.getItem("user"), photo).subscribe(r => {
+      if(r.message === "True"){
+        this.changeColorFavorite();
+      }
+    })
   }
 }

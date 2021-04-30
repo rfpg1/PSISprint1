@@ -28,7 +28,6 @@ exports.delete_photo = function(req, res, next) {
 
 exports.update_like = function(req, res, next) {
     const id = req.params.id;
-    console.log(id);
     Like.find({ "user": req.body.user, "photo": id })
         .exec(function(err, like1) {
             if (like1.length !== 0) {
@@ -66,22 +65,14 @@ exports.get_likes = function(req, res, next) {
         })
 };
 
-exports.get_likedPhotos = function(req, res, next) {
-    Like.find({ user: req.body.user })
-        .exec(function(err, liked_photos) {
-            if (err) { return next(err); }
-            res.json(liked_photos);
-        });
-};
-
 exports.is_liked = function(req, res, next) {
-    const id = req.params.id;
-    Like.find({ "user": req.body.user, "photo": id })
+    const id = req.query.id;
+    Like.find({ "user": req.query.user, "photo": id })
         .exec(function(err, like) {
             if (like.length !== 0) {
-                res.json({ message: 'User like this photo' })
+                res.json({ message: "True" })
             } else {
-                res.json({ message: 'User dont like this photo' })
+                res.json({ message: "False" })
             }
         })
 };

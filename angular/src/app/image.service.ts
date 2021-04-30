@@ -60,6 +60,20 @@ export class ImageService {
     );
   }
 
+  addLike(user, photo) {
+    return this.http.put<any>(`${this.imageUrl}/photo/like/${photo._id}`, { user: user }, this.httpOptions).pipe(
+      tap(_ => console.log('Like succeded')),
+      catchError(this.handleError<Photo[]>('addLike', []))
+    );
+  }
+
+  isLiked(user, photo) {
+    return this.http.get<any>(`${this.imageUrl}/photo/isLiked?user=${user}&id=${photo._id}`).pipe(
+      tap(_ => console.log('YES VERY MUCHES IN THE NIGHTS')),
+      catchError(this.handleError<any>('addLike', []))
+    );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

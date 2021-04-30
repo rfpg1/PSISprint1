@@ -58,6 +58,14 @@ exports.update_like = function(req, res, next) {
         })
 };
 
+exports.get_likes = function(req, res, next) {
+    Like.find({})
+        .exec(function(err, likes) {
+            if (err) { return next(err) }
+            res.json(likes)
+        })
+};
+
 exports.get_likedPhotos = function(req, res, next) {
     Like.find({ user: req.body.user })
         .exec(function(err, liked_photos) {

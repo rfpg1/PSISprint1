@@ -6,6 +6,8 @@
 
   router.delete('/:id', photos_controller.delete_photo);
 
+  router.get('/:id', photos_controller.get_photo);
+
   router.get('/photo', photos_controller.get_userPhotos);
 
   router.put('/like/:id', photos_controller.update_like);

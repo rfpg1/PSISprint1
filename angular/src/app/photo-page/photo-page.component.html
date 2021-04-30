@@ -1,0 +1,29 @@
+<meta http-equiv="Content Type" content="text/html; charset=utf8">
+<div class="navbar">
+    <ul>
+        <li class="upload" *ngIf="loggedIn()"> <button (click)="onUpload()">Upload</button></li>
+        <li class="dashboard"> <button routerLink="/dashboard">Dashboard</button></li>
+        <li class="myProfile" *ngIf="loggedIn()"><button (click)="goToProfile()">My Profile</button></li>
+        <li class="upload" *ngIf="loggedIn()"> <button (click)="logout()">Logout</button></li>
+        <li class="upload" *ngIf="!loggedIn()"> <button routerLink="/registar">Registo</button></li>
+        <li class="upload" *ngIf="!loggedIn()"> <button routerLink="/login">Login</button></li>
+    </ul>
+</div>
+
+<div class="pic" *ngIf="pic">
+    <div class="user">{{pic.user}}</div>
+    <div class="date">{{pic.date | date: 'dd/MM/yyyy HH:mm'}}</div>
+    <img src="{{pic.photo}}">
+    <button (click)="addLike(pic)" id="likeButton">
+        <mat-icon class="likes" id="like">favorite</mat-icon>
+    </button>
+    <span id="photoName">{{pic.name}}</span>
+    <button id="favButton">
+        <mat-icon class="fav">grade</mat-icon>
+    </button>
+    <button id="shareButton" (click) = "share()">
+        <mat-icon class="share" id="share">share</mat-icon>
+    </button>
+    <span class="num_likes">{{pic.likes}} Likes</span>
+    <span class="description">{{pic.descricao}}</span>
+</div>

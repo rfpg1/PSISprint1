@@ -43,4 +43,15 @@ export class PhotoViewerComponent implements OnInit {
     var like = document.getElementById("like");
     like.style.color = "red";
   }
+
+  share(){
+    var id = this.pic._id;
+    document.addEventListener("copy", (e:ClipboardEvent) => {
+      e.clipboardData.setData("text/plain", ("http://localhost:4200/photo/" + id));
+      e.preventDefault();
+      document.removeEventListener("copy", null);
+    });
+    document.execCommand("copy");
+    alert("Link copiado para a clipboard!");
+  }
 }

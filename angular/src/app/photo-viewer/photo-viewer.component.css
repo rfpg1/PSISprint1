@@ -11,6 +11,8 @@
     width: 100%;
     height: 100%;
     max-height: none;
+    margin: 0;
+    padding: 0;
 }
 
 .pic {
@@ -18,7 +20,10 @@
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+}
+
+.pic .user, #likeButton, #photoName{
+    margin-right: auto;
 }
 
 .pic .mat-icon {
@@ -57,7 +62,12 @@
     cursor: pointer;
 }
 
-.pic .likes {
+.pic .share:hover {
+    color: darkorange;
+    cursor: pointer;
+}
+
+.pic .likes, .fav, .share {
     color: #dcdcdc;
     cursor: pointer;
 }
@@ -99,7 +109,7 @@
     background-color: black;
 }
 
-#likeButton {
+#likeButton, #favButton, #shareButton {
     background-color: #1b1b1b;
     border: none;
 }

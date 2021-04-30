@@ -26,6 +26,15 @@ exports.delete_photo = function(req, res, next) {
     })
 };
 
+exports.get_photo = function(req, res, next) {
+    const id = req.params.id;
+    Photo.findById({ _id: id })
+        .exec(function(err, photo) {
+            if (err) { return next(err) }
+            res.json(photo);
+    });
+};
+
 exports.update_like = function(req, res, next) {
     const id = req.params.id;
     Like.find({ "user": req.body.user, "photo": id })

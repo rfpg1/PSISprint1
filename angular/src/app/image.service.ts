@@ -52,7 +52,14 @@ export class ImageService {
       catchError(this.handleError<Photo[]>('getMostLikes', []))
     );
   }
-
+  
+  getPhoto(id) {
+    return this.http.get<any>(`${this.imageUrl}/photo/${id}`).pipe(
+      tap(_ => console.log('Fetched Images')),
+      catchError(this.handleError<Photo[]>('getMostLikes', []))
+    );
+  }
+  
   getMyPhotos(user): Observable<Photo[]> {
     return this.http.get<Photo[]>(`${this.imageUrl}/photo/photo?user=${user}`).pipe(
       tap(_ => console.log('Fetched Images')),

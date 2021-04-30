@@ -123,20 +123,22 @@ button:hover {
         height: 30%;
         width: 40%;
     }
-
     .navbar li {
         width: 4em;
     }
-
     .navbar button {
         font-size: smaller;
     }
-
     .navbar li {
         font-size: smaller;
     }
-
     .navbar li:first-child {
         padding: 2%;
     }
+}
+
+#title {
+    margin-left: 40%;
+    color: whitesmoke;
+    margin-top: 0.2%;
 }

@@ -30,7 +30,9 @@ export class RegistarComponent implements OnInit {
           null,
           Validators.compose([
             Validators.minLength(3),
-            CustomValidators.symbolsOnly,
+            CustomValidators.patternValidator(/^[^-€ªº«»´`~!@#$%\^&*()_+={}|[\]\\:';"<>?,./]*$/, {
+              hasSymbol: true
+            }),
             Validators.required
           ])
         ],
@@ -71,7 +73,7 @@ export class RegistarComponent implements OnInit {
       else {
         this.jaExiste = false;
         this.registou = true;
-        this.router.navigate(["/dashboard"]);
+        this.router.navigate(["/login"]);
       }
     });
   }

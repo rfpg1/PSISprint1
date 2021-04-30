@@ -5,10 +5,11 @@
             <div id="dropdown_content" style="display: none">
                 <ul>
                     <li><button (click)="getMostRecentImages()">Recent</button></li>
-                    <li><button (click)="getMostLikesImages()"(keydown.tab)="expand()">Likes</button></li>
+                    <li><button (click)="getMostLikesImages()" (keydown.tab)="expand()">Likes</button></li>
                 </ul>
             </div>
         </li>
+        <h2 id="title">Wall</h2>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="onUpload()">Upload</button></li>
         <li class="myProfile" *ngIf="loggedIn()"><button (click)="goToProfile()">My Profile</button></li>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="logout()">Logout</button></li>

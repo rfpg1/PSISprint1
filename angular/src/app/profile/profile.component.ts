@@ -58,4 +58,8 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  goToFavorite():void {
+    window.location.href = "/favorite"
+    localStorage.setItem("profile", "false")
+  }
 }

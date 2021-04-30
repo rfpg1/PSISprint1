@@ -21,7 +21,6 @@ export class ImageService {
   constructor(private http: HttpClient) { }
 
   getMostRecentImages(): Observable<Photo[]> {
-    //const images = of(IMAGES);
     return this.http.get<Photo[]>(`${this.imageUrl}/mural`)
       .pipe(
         tap(_ => console.log('Fetched Images')),
@@ -35,6 +34,14 @@ export class ImageService {
         tap(_ => console.log('Fetched Images')),
         catchError(this.handleError<Photo[]>('getMostLikes', []))
       );
+  }
+
+  getFavoriteImages(user): Observable<Photo[]> {
+    return this.http.get<Photo[]>(`${this.imageUrl}/photo/favorites?user=${user}`)
+    .pipe(
+      tap(_ => console.log('Fetched Images')),
+      catchError(this.handleError<Photo[]>('getFavoriteImages', []))
+    );
   }
 
   addPhoto(photo): Observable<Photo> {
@@ -80,7 +87,7 @@ export class ImageService {
   }
 
   addFavorite(user, photo) {
-    return this.http.post<any>(`${this.imageUrl}/photo/favorite/${photo._id}`, { user } , this.httpOptions).pipe(
+    return this.http.post<any>(`${this.imageUrl}/photo/favorite/${photo._id}`, { user, photo } , this.httpOptions).pipe(
       tap(_ => console.log('Favorite Successed')),
       catchError(this.handleError<any>('addFavorite', []))
     );

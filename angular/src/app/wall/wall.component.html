@@ -10,6 +10,7 @@
             </div>
         </li>
         <h2 id="title">Wall</h2>
+        <li class="myProfile" *ngIf="loggedIn()"><button routerLink="/favorite">Favorites</button></li>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="onUpload()">Upload</button></li>
         <li class="myProfile" *ngIf="loggedIn()"><button (click)="goToProfile()">My Profile</button></li>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="logout()">Logout</button></li>

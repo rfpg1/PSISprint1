@@ -111,7 +111,7 @@ button:hover {
 }
 
 #title {
-    margin-left: 40%;
+    margin-left: 30%;
     color: whitesmoke;
     margin-top: 0.2%;
 }
@@ -145,7 +145,16 @@ button:hover {
 
 @media only screen and (max-width: 768px) {
     #title {
-        margin-left: 29%;
+        margin-left: 25%;
+        color: whitesmoke;
+        margin-top: 1.5%;
+        font-size: x-large;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #title {
+        margin-left: 20%;
         color: whitesmoke;
         margin-top: 4%;
         font-size: medium;

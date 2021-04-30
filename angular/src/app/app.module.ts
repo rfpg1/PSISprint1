@@ -15,6 +15,7 @@ import { RegistarComponent } from './registar/registar.component';
 import { UploadComponent } from './upload/upload.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PhotoPageComponent } from './photo-page/photo-page.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PhotoPageComponent } from './photo-page/photo-page.component';
     RegistarComponent,
     UploadComponent,
     ProfileComponent,
-    PhotoPageComponent
+    PhotoPageComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,8 @@
 <div class="navbar">
     <ul>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="onUpload()">Upload</button></li>
-        <li class="dashboard"> <button routerLink="/dashboard">Dashboard</button></li>
+        <li class="dashboard"> <button routerLink="/dashboard">Wall</button></li>
+        <li class="myProfile" *ngIf="loggedIn()"><button routerLink="/favorite">Favorites</button></li>
         <li class="myProfile" *ngIf="loggedIn()"><button (click)="goToProfile()">My Profile</button></li>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="logout()">Logout</button></li>
         <li class="upload" *ngIf="!loggedIn()"> <button routerLink="/registar">Registo</button></li>

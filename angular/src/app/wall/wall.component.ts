@@ -24,6 +24,7 @@ export class WallComponent implements OnInit {
   getMostRecentImages(): void {
     this.imageService.getMostRecentImages()
       .subscribe(pics => {
+        console.log(pics)
         this.pics = pics
       });
   }

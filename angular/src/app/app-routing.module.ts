@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistarComponent } from './registar/registar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PhotoPageComponent } from './photo-page/photo-page.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registar', component: RegistarComponent },
   {path: 'profile', component: ProfileComponent },
-  {path: 'photo/:id', component: PhotoPageComponent}
+  {path: 'photo/:id', component: PhotoPageComponent},
+  {path: 'favorite', component: FavoriteComponent}
 ];
 
 @NgModule({

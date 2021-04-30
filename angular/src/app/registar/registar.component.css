@@ -9,11 +9,15 @@ body {
     font-family: 'Trebuchet MS', sans-serif;
 }
 
+::ng-deep body {
+    background: #1b1b1b;
+}
+
 .bg {
     background-image: url("src\assets\images\fundo2.jpg");
     padding-top: 2%;
     background-size: 100%;
-    padding-bottom: 10%;
+    padding-bottom: 6.7%;
     background-repeat: no-repeat;
 }
 

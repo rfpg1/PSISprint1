@@ -12,6 +12,6 @@ router.put('/like/:id', photos_controller.update_like);
 
 router.get('/likes', photos_controller.get_likes);
 
-router.get('/like/:id', photos_controller.is_liked);
+router.get('/isLiked', photos_controller.is_liked);
 
 module.exports = router;

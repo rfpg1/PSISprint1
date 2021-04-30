@@ -11,8 +11,8 @@ import { catchError, tap } from 'rxjs/operators'
 })
 export class ImageService {
 
-  //private imageUrl = 'http://localhost:3054'
-  private imageUrl = 'http://appserver.alunos.di.fc.ul.pt:3054'
+  private imageUrl = 'http://localhost:3054'
+  //private imageUrl = 'http://appserver.alunos.di.fc.ul.pt:3054'
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest', })
@@ -57,6 +57,20 @@ export class ImageService {
     return this.http.get<Photo[]>(`${this.imageUrl}/photo/photo?user=${user}`).pipe(
       tap(_ => console.log('Fetched Images')),
       catchError(this.handleError<Photo[]>('getMostLikes', []))
+    );
+  }
+
+  addLike(user, photo) {
+    return this.http.put<any>(`${this.imageUrl}/photo/like/${photo._id}`, { user: user }, this.httpOptions).pipe(
+      tap(_ => console.log('Like succeded')),
+      catchError(this.handleError<Photo[]>('addLike', []))
+    );
+  }
+
+  isLiked(user, photo) {
+    return this.http.get<any>(`${this.imageUrl}/photo/isLiked?user=${user}&id=${photo._id}`).pipe(
+      tap(_ => console.log('YES VERY MUCHES IN THE NIGHTS')),
+      catchError(this.handleError<any>('addLike', []))
     );
   }
 

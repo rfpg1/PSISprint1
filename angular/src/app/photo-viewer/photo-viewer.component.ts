@@ -27,4 +27,18 @@ export class PhotoViewerComponent implements OnInit {
       //TODO
     }
   }
+
+  addLike(photo) {
+    this.imageService.addLike(localStorage.getItem("user"), photo).subscribe(r => { window.location.reload(); })
+  }
+
+  ifIsLiked(photo) {
+    console.log("asfaef")
+    this.imageService.isLiked(localStorage.getItem("user"), photo)
+  }
+
+  changeColor() {
+    var like = document.getElementById("like");
+    like.style.color = "purple";
+  }
 }

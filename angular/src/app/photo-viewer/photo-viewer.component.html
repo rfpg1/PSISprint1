@@ -3,7 +3,8 @@
         <div class="user">{{pic.user}}</div>
         <div class="date">{{pic.date | date: 'dd/MM/yyyy HH:mm'}}</div>
         <img src="{{pic.photo}}">
-        <mat-icon class="likes">favorite</mat-icon> <span>{{pic.name}}</span>
+        <mat-icon class="likes" (click)="ifIsLiked(pic)" id="like">favorite</mat-icon>
+        <span>{{pic.name}}</span>
         <mat-icon class="fav">grade</mat-icon>
         <span class="num_likes">{{pic.likes}} Likes</span>
         <span class="description">{{pic.descricao}}</span>

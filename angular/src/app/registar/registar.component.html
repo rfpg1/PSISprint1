@@ -14,8 +14,9 @@
                     Deve ter 3 ou mais carateres!
                 </label>
                 <label class="col"
-                    [ngClass]="frmSignup.controls['username'].hasError('hasLetters') ? 'text-danger' : 'text-success'">
-                    <i class="material-icons">{{ frmSignup.controls['username'].hasError('hasLetters') ?
+                    [ngClass]="frmSignup.controls['username'].hasError('required') || frmSignup.controls['username'].hasError('hasSymbol') ? 'text-danger' : 'text-success'">
+                    <i class="material-icons">{{ frmSignup.controls['username'].hasError('required') ||
+                        frmSignup.controls['username'].hasError('hasSymbol') ?
                         'cancel' :
                         'check_circle' }}</i>
                     Username não pode conter simbolos!

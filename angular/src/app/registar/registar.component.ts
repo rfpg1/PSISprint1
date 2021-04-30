@@ -30,7 +30,9 @@ export class RegistarComponent implements OnInit {
           null,
           Validators.compose([
             Validators.minLength(3),
-            CustomValidators.symbolsOnly,
+            CustomValidators.patternValidator(/^[^`~!@#$%\^&*()_+={}|[\]\\:';"<>?,./]*$/, {
+              hasSymbol: true
+            }),
             Validators.required
           ])
         ],

@@ -6,8 +6,13 @@
         <button (click)="addLike(pic)" id="likeButton">
             <mat-icon class="likes" id="like">favorite</mat-icon>
         </button>
-        <span>{{pic.name}}</span>
-        <mat-icon class="fav">grade</mat-icon>
+        <span id="photoName">{{pic.name}}</span>
+        <button id="favButton">
+            <mat-icon class="fav">grade</mat-icon>
+        </button>
+        <button id="shareButton" (click)="share()">
+            <mat-icon class="share" id="share">share</mat-icon>
+        </button>
         <span class="num_likes">{{pic.likes}} Likes</span>
         <span class="description">{{pic.descricao}}</span>
         <button class="delete" *ngIf="profile()" (click)="deletePhoto(pic)">Delete Photo</button>

@@ -1,0 +1,132 @@
+ul {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: left;
+}
+
+::ng-deep body {
+    background: #1b1b1b;
+}
+
+.pic .user,
+#likeButton,
+#photoName {
+    margin-right: auto;
+}
+
+.navbar {
+    background: #1b1b1b;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    display: flex;
+    padding: 0;
+}
+
+.navbar button {
+    background: transparent;
+    height: 90%;
+    color: whitesmoke;
+    border: none;
+    text-align: center;
+    padding: 2%;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    width: 90%;
+    border-bottom: 1px solid darkorange;
+}
+
+.navbar li {
+    width: 7em;
+    border-left: 1px solid gray;
+    height: 100%;
+    text-align: center;
+}
+
+.navbar ul {
+    height: 3em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pic {
+    background: #1b1b1b;
+    color: #e6e6e6;
+    font-size: 1.2em;
+    font-family: 'Trebuchet MS', sans-serif;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.pic .mat-icon {
+    font-size: 1.5em;
+}
+
+.pic .date {
+    text-align: right;
+}
+
+.pic .num_likes {
+    width: 100%;
+    padding-top: 2%;
+}
+
+.pic img {
+    width: 100%;
+    padding: 1% 0 1% 0;
+    object-fit: contain;
+}
+
+@media only screen and (min-width: 768px) {
+    /* tables and desktop layout */
+    .pic img {
+        height: 20em;
+    }
+}
+
+.pic .fav:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+.pic .likes:hover {
+    color: #e60000;
+    cursor: pointer;
+}
+
+.pic .share:hover {
+    color: darkorange;
+    cursor: pointer;
+}
+
+#likeButton,
+#favButton,
+#shareButton {
+    color: #dcdcdc;
+    cursor: pointer;
+}
+
+.pic .description {
+    width: 100%;
+    padding-top: 2.5%;
+    margin-top: 2.5%;
+    border-top: 2px solid #e6e6e6;
+    height: 7.5em;
+    overflow: auto;
+}
+
+#likeButton,
+#favButton,
+#shareButton {
+    background-color: #1b1b1b;
+    border: none;
+}

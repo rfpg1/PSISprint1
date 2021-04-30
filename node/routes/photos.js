@@ -14,4 +14,6 @@
 
   router.get('/isLiked', photos_controller.is_liked);
 
+  router.get('/:id', photos_controller.get_photo);
+
   module.exports = router;

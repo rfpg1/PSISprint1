@@ -28,7 +28,10 @@ export class PhotoViewerComponent implements OnInit {
   }
 
   addLike(photo) {
-    this.imageService.addLike(localStorage.getItem("user"), photo).subscribe(r => { window.location.reload(); })
+    const user = localStorage.getItem("user");
+    if (user !== null){
+      this.imageService.addLike(user, photo).subscribe(r => { window.location.reload(); })
+    }
   }
 
   ifIsLiked(photo) {
@@ -42,5 +45,16 @@ export class PhotoViewerComponent implements OnInit {
   changeColor() {
     var like = document.getElementById("like");
     like.style.color = "red";
+  }
+
+  share(){
+    var id = this.pic._id;
+    document.addEventListener("copy", (e:ClipboardEvent) => {
+      e.clipboardData.setData("text/plain", ("http://localhost:4200/photo/" + id));
+      e.preventDefault();
+      document.removeEventListener("copy", null);
+    });
+    document.execCommand("copy");
+    alert("Link copiado para a clipboard!");
   }
 }

@@ -29,21 +29,6 @@ li {
     float: right;
 }
 
-@media only screen and (min-width: 768px) {
-    /* tables and desktop layout */
-    .wall li {
-        height: 12em;
-        width: 20em;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .wall li {
-        height: 30%;
-        width: 40%;
-    }
-}
-
 .wall li button {
     height: 100%;
     width: 100%;
@@ -146,4 +131,31 @@ button:hover {
 
 .dropdown:hover #dropdown_content {
     display: block !important;
+}
+
+@media only screen and (min-width: 768px) {
+    /* tables and desktop layout */
+    .wall li {
+        height: 12em;
+        width: 20em;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .wall li {
+        height: 30%;
+        width: 40%;
+    }
+
+    .navbar li {
+        width: 4em;
+    }
+
+    .navbar button {
+        font-size: smaller;
+    }
+
+    #dropdown_content ul {
+        width: 4em;
+    }
 }

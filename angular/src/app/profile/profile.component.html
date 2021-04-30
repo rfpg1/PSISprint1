@@ -1,7 +1,7 @@
 <meta http-equiv="Content Type" content="text/html; charset=utf8">
 <div class="navbar">
     <ul>
-        <li class="user" *ngIf="loggedIn()"> <button routerLink="/profile">{{user}}</button></li>
+        <li class="user" *ngIf="loggedIn()"> {{user}}</li>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="logout()">Logout</button></li>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="goToDashboard()">Wall</button></li>
         <li class="upload" *ngIf="loggedIn()"> <button (click)="onUpload()">Upload</button></li>

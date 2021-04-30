@@ -36,21 +36,6 @@ li {
     float: right;
 }
 
-@media only screen and (min-width: 768px) {
-    /* tables and desktop layout */
-    .wall li {
-        height: 12em;
-        width: 20em;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .wall li {
-        height: 30%;
-        width: 40%;
-    }
-}
-
 .wall li button {
     height: 100%;
     width: 100%;
@@ -69,6 +54,13 @@ button:hover {
     border-bottom: 1px solid gray;
     display: flex;
     padding: 0;
+}
+
+.navbar li {
+    color: whitesmoke;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: large;
+    font-weight: bold;
 }
 
 .navbar button {
@@ -109,11 +101,42 @@ button:hover {
     cursor: pointer;
 }
 
-.navbar li:hover {
+.navbar li:not(:first-child):hover {
     background: #0d0d0d;
 }
 
 .wall button:hover {
     filter: blur(1px);
     -webkit-filter: blur(1px);
+}
+
+@media only screen and (min-width: 768px) {
+    /* tables and desktop layout */
+    .wall li {
+        height: 12em;
+        width: 20em;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .wall li {
+        height: 30%;
+        width: 40%;
+    }
+
+    .navbar li {
+        width: 4em;
+    }
+
+    .navbar button {
+        font-size: smaller;
+    }
+
+    .navbar li {
+        font-size: smaller;
+    }
+
+    .navbar li:first-child {
+        padding: 2%;
+    }
 }

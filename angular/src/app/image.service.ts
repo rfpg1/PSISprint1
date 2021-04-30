@@ -69,7 +69,7 @@ export class ImageService {
 
   isLiked(user, photo) {
     return this.http.get<any>(`${this.imageUrl}/photo/isLiked?user=${user}&id=${photo._id}`).pipe(
-      tap(_ => console.log('YES VERY MUCHES IN THE NIGHTS')),
+      tap(_ => console.log('Probably liked')),
       catchError(this.handleError<any>('addLike', []))
     );
   }

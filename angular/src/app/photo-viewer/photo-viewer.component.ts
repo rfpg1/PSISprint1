@@ -56,7 +56,7 @@ export class PhotoViewerComponent implements OnInit {
   share(){
     var id = this.pic._id;
     document.addEventListener("copy", (e:ClipboardEvent) => {
-      e.clipboardData.setData("text/plain", ("http://localhost:4200/photo/" + id));
+      e.clipboardData.setData("text/plain", ("http://10.101.151.25:3004/photo/" + id));
       e.preventDefault();
       document.removeEventListener("copy", null);
     });

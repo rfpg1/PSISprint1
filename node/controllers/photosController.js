@@ -23,6 +23,12 @@ exports.delete_photo = function(req, res, next) {
     const id = req.params.id;
     Photo.findByIdAndDelete({ _id: id }, function(err, photo) {
         if (err) { return next(err) }
+        Like.remove({ "photo": photo._id }, function(err, result) {
+            if (err) { return next(err) }
+        })
+        Favorite.remove({ "photo": photo._id }, function(err, result) {
+            if (err) { return next(err) }
+        })
         res.json({ message: 'Photo deleted successfully' })
     })
 };

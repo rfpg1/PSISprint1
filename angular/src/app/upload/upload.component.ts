@@ -24,23 +24,31 @@ export class UploadComponent implements OnInit {
     reader.onload = () => {
       const user = localStorage.getItem("user");
       var boas;
+      console.log(this.name)
+      console.log(this.descricao)
       if (!(this.name === undefined)) {
         if (this.descricao === undefined) {
-          if (confirm("Quer enviar a imagem sem a descricao"))
+          console.log("teste1")
+          if (confirm("Quer enviar a imagem sem a descricao")){
             boas = { user: user, name: this.name.value, likes: 0, descricao: "", date: new Date(), photo: reader.result as String }
-          this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
+            this.imageService.addPhoto(boas).subscribe(r => { /*window.location.reload()*/ })
+          }
         } else {
+          console.log("teste")
           boas = { user: user, name: this.name.value, likes: 0, descricao: this.descricao, date: new Date(), photo: reader.result as String }
-          this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
+          this.imageService.addPhoto(boas).subscribe(r => { /*window.location.reload()*/ })
         }
       } else {
         if (this.descricao == undefined) {
-          if (confirm("Quer enviar a imagem sem a descricao"))
+          console.log("teste2")
+          if (confirm("Quer enviar a imagem sem a descricao")){
             boas = { user: user, name: this.ficheiro.name, likes: 0, descricao: "", date: new Date(), photo: reader.result as String }
-          this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
+            this.imageService.addPhoto(boas).subscribe(r => { /*window.location.reload()*/ })
+          }
         } else {
+          console.log("teste3")
           boas = { user: user, name: this.ficheiro.name, likes: 0, descricao: this.descricao, date: new Date(), photo: reader.result as String }
-          this.imageService.addPhoto(boas).subscribe(r => { window.location.reload() })
+          this.imageService.addPhoto(boas).subscribe(r => { /*window.location.reload()*/ })
         }
       }
     }

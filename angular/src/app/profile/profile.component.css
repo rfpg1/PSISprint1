@@ -80,6 +80,9 @@ button:hover {
 .navbar li:first-child {
     border-left: none;
     border-right: 1px solid gray;
+    width: auto;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 .navbar li {
@@ -154,9 +157,9 @@ button:hover {
 
 @media only screen and (max-width: 767px) {
     #title {
-        margin-left: 20%;
+        margin-left: 50%;
         color: whitesmoke;
-        margin-top: 4%;
+        margin-top: 2%;
         font-size: medium;
     }
 }

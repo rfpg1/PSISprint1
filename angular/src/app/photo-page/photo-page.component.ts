@@ -64,7 +64,7 @@ export class PhotoPageComponent implements OnInit {
   share(){
     var id = this.pic._id;
     document.addEventListener("copy", (e:ClipboardEvent) => {
-      e.clipboardData.setData("text/plain", ("http://localhost:4200/photo/" + id));
+      e.clipboardData.setData("text/plain", ("http://appserver.alunos.di.fc.ul.pt:3004/photo/" + id));
       e.preventDefault();
       document.removeEventListener("copy", null);
     });

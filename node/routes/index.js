@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 var Photo = require('../models/photo');
+var Favorite = require('../models/favorite');
+var Like = require('../models/like');
 
 var async = require('async');
 

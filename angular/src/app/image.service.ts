@@ -11,8 +11,8 @@ import { catchError, tap } from 'rxjs/operators'
 })
 export class ImageService {
 
-  private imageUrl = 'http://localhost:3054'
-  //private imageUrl = 'http://10.101.151.25:3054'
+  //private imageUrl = 'http://localhost:3054'
+  private imageUrl = 'http://10.101.151.25:3054'
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest', })

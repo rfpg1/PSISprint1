@@ -102,6 +102,7 @@ exports.post_favorite = function(req, res, next) {
             if (favorites.length !== 0) {
                 Favorite.findOneAndDelete({ "user": req.body.user, "photo": id }, function(err, result) {
                     if (err) { return next(err) }
+                    res.json(result)
                 })
             } else {
                 var fav = new Favorite({ "user": req.body.user, "photo": id })

@@ -14,9 +14,9 @@
 
   router.get('/isLiked', photos_controller.is_liked);
 
-  router.get('/isFavorite', photos_controller.is_favorite);
-
   router.get('/favorites', photos_controller.get_favorites)
+
+  router.get('/isFavorite', photos_controller.is_favorite);
 
   router.post('/favorite/:id', photos_controller.post_favorite);
 

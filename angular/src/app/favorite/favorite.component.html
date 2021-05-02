@@ -14,7 +14,7 @@
 <div class="wall">
     <ul>
         <li *ngFor="let pic of pics">
-            <button (click)="openDialog(pic.photo)" style="background: url({{pic.photo.photo}}); background-size: cover;"></button>
+            <button (click)="openDialog(pic)" style="background: url({{pic.photo}}); background-size: cover;"></button>
         </li>
     </ul>
 </div>

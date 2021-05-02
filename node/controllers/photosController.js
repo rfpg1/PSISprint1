@@ -27,18 +27,10 @@ exports.delete_photo = function(req, res, next) {
         Like.remove({ "photo": photo._id }, function(err, result) {
                 if (err) { return next(err) }
             })
-            /* //TODO
-            Favorite.find({})
-                .exec(function(err, favorites) {
-                    for (var i = 0; i < favorites.length; i++) {
-                        if (favorites[i].photo._id == photo._id) {
-                            Favorite.remove({ "photo": favorites[i].photo }, function(err, result) {
-                                if (err) { return next(err) }
-                            })
-                        }
-                    }
-                })
-                */
+            //TODO
+        Favorite.remove({ "photo": id }, function(err, result) {
+            if (err) { return next(err) }
+        })
         res.json({ message: 'Photo deleted successfully' })
     })
 };
@@ -105,30 +97,6 @@ exports.is_liked = function(req, res, next) {
 
 exports.post_favorite = function(req, res, next) {
     const id = req.params.id
-        /*
-        Favorite.find({ "user": req.body.user })
-            .exec(function(err, favorites) {
-                if (err) return next(err)
-                var b = false;
-                for (var i = 0; i < favorites.length; i++) {
-                    if (favorites[i].photo._id == id) {
-                        b = true
-                        Favorite.findOneAndDelete({ "user": req.body.user, "photo": favorites[i].photo }, function(err, favorite) {
-                            if (err) return next(err)
-                            res.json("Fav removed")
-                        })
-                        break;
-                    }
-                }
-                if (!b) {
-                    var fav = new Favorite({ "user": req.body.user, "photo": req.body.photo })
-                    fav.save(function(err, favorite) {
-                        if (err) return next(err)
-                        res.json(favorite)
-                    })
-                }
-            })
-            */
     Favorite.find({ "user": req.body.user, "photo": id })
         .exec(function(err, favorites) {
             if (favorites.length !== 0) {
@@ -146,28 +114,6 @@ exports.post_favorite = function(req, res, next) {
 }
 
 exports.is_favorite = function(req, res, next) {
-    /*
-    const id = req.query.id;
-    Photo.find({ _id: id })
-        .exec(function(err, photo) {
-            if (err) return next(err)
-            Favorite.find({ "user": req.query.user })
-                .exec(function(err, fav) {
-                    var b = false;
-                    if (err) return next(err);
-                    for (i = 0; i < fav.length; i++) {
-                        if (photo[0]._id == fav[i].photo._id) {
-                            b = true
-                            res.json({ message: "True" })
-                            break;
-                        }
-                    }
-                    if (!b) {
-                        res.json({ message: "False" })
-                    }
-                })
-        })
-        */
     const id = req.query.id;
     Favorite.find({ "user": req.query.user, "photo": id })
         .exec(function(err, favorite) {
